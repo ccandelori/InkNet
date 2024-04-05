@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D02BC055D70029A850 /* InkNetApp.swift */; };
+		10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D22BC055D70029A850 /* ContentView.swift */; };
+		10C4E3D52BC055D90029A850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E3D42BC055D90029A850 /* Assets.xcassets */; };
+		10C4E3D82BC055D90029A850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E3D72BC055D90029A850 /* Preview Assets.xcassets */; };
+		10C4E3E22BC055D90029A850 /* InkNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3E12BC055D90029A850 /* InkNetTests.swift */; };
+		10C4E3EC2BC055D90029A850 /* InkNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3EB2BC055D90029A850 /* InkNetUITests.swift */; };
+		10C4E3EE2BC055D90029A850 /* InkNetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10C4E3DE2BC055D90029A850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10C4E3C52BC055D70029A850 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10C4E3CC2BC055D70029A850;
+			remoteInfo = InkNet;
+		};
+		10C4E3E82BC055D90029A850 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10C4E3C52BC055D70029A850 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10C4E3CC2BC055D70029A850;
+			remoteInfo = InkNet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10C4E3CD2BC055D70029A850 /* InkNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C4E3D02BC055D70029A850 /* InkNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetApp.swift; sourceTree = "<group>"; };
+		10C4E3D22BC055D70029A850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		10C4E3D42BC055D90029A850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10C4E3D72BC055D90029A850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10C4E3DD2BC055D90029A850 /* InkNetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InkNetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C4E3E12BC055D90029A850 /* InkNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetTests.swift; sourceTree = "<group>"; };
+		10C4E3E72BC055D90029A850 /* InkNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InkNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C4E3EB2BC055D90029A850 /* InkNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetUITests.swift; sourceTree = "<group>"; };
+		10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10C4E3CA2BC055D70029A850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C4E3DA2BC055D90029A850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C4E3E42BC055D90029A850 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10C4E3C42BC055D70029A850 = {
+			isa = PBXGroup;
+			children = (
+				10C4E3CF2BC055D70029A850 /* InkNet */,
+				10C4E3E02BC055D90029A850 /* InkNetTests */,
+				10C4E3EA2BC055D90029A850 /* InkNetUITests */,
+				10C4E3CE2BC055D70029A850 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10C4E3CE2BC055D70029A850 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3CD2BC055D70029A850 /* InkNet.app */,
+				10C4E3DD2BC055D90029A850 /* InkNetTests.xctest */,
+				10C4E3E72BC055D90029A850 /* InkNetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10C4E3CF2BC055D70029A850 /* InkNet */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3D02BC055D70029A850 /* InkNetApp.swift */,
+				10C4E3D22BC055D70029A850 /* ContentView.swift */,
+				10C4E3D42BC055D90029A850 /* Assets.xcassets */,
+				10C4E3D62BC055D90029A850 /* Preview Content */,
+			);
+			path = InkNet;
+			sourceTree = "<group>";
+		};
+		10C4E3D62BC055D90029A850 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3D72BC055D90029A850 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10C4E3E02BC055D90029A850 /* InkNetTests */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3E12BC055D90029A850 /* InkNetTests.swift */,
+			);
+			path = InkNetTests;
+			sourceTree = "<group>";
+		};
+		10C4E3EA2BC055D90029A850 /* InkNetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3EB2BC055D90029A850 /* InkNetUITests.swift */,
+				10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */,
+			);
+			path = InkNetUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10C4E3CC2BC055D70029A850 /* InkNet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C4E3F12BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNet" */;
+			buildPhases = (
+				10C4E3C92BC055D70029A850 /* Sources */,
+				10C4E3CA2BC055D70029A850 /* Frameworks */,
+				10C4E3CB2BC055D70029A850 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InkNet;
+			productName = InkNet;
+			productReference = 10C4E3CD2BC055D70029A850 /* InkNet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10C4E3DC2BC055D90029A850 /* InkNetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C4E3F42BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNetTests" */;
+			buildPhases = (
+				10C4E3D92BC055D90029A850 /* Sources */,
+				10C4E3DA2BC055D90029A850 /* Frameworks */,
+				10C4E3DB2BC055D90029A850 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10C4E3DF2BC055D90029A850 /* PBXTargetDependency */,
+			);
+			name = InkNetTests;
+			productName = InkNetTests;
+			productReference = 10C4E3DD2BC055D90029A850 /* InkNetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		10C4E3E62BC055D90029A850 /* InkNetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10C4E3F72BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNetUITests" */;
+			buildPhases = (
+				10C4E3E32BC055D90029A850 /* Sources */,
+				10C4E3E42BC055D90029A850 /* Frameworks */,
+				10C4E3E52BC055D90029A850 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10C4E3E92BC055D90029A850 /* PBXTargetDependency */,
+			);
+			name = InkNetUITests;
+			productName = InkNetUITests;
+			productReference = 10C4E3E72BC055D90029A850 /* InkNetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10C4E3C52BC055D70029A850 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					10C4E3CC2BC055D70029A850 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					10C4E3DC2BC055D90029A850 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 10C4E3CC2BC055D70029A850;
+					};
+					10C4E3E62BC055D90029A850 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 10C4E3CC2BC055D70029A850;
+					};
+				};
+			};
+			buildConfigurationList = 10C4E3C82BC055D70029A850 /* Build configuration list for PBXProject "InkNet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10C4E3C42BC055D70029A850;
+			productRefGroup = 10C4E3CE2BC055D70029A850 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10C4E3CC2BC055D70029A850 /* InkNet */,
+				10C4E3DC2BC055D90029A850 /* InkNetTests */,
+				10C4E3E62BC055D90029A850 /* InkNetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10C4E3CB2BC055D70029A850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C4E3D82BC055D90029A850 /* Preview Assets.xcassets in Resources */,
+				10C4E3D52BC055D90029A850 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C4E3DB2BC055D90029A850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C4E3E52BC055D90029A850 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10C4E3C92BC055D70029A850 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */,
+				10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C4E3D92BC055D90029A850 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C4E3E22BC055D90029A850 /* InkNetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10C4E3E32BC055D90029A850 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10C4E3EC2BC055D90029A850 /* InkNetUITests.swift in Sources */,
+				10C4E3EE2BC055D90029A850 /* InkNetUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10C4E3DF2BC055D90029A850 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10C4E3CC2BC055D70029A850 /* InkNet */;
+			targetProxy = 10C4E3DE2BC055D90029A850 /* PBXContainerItemProxy */;
+		};
+		10C4E3E92BC055D90029A850 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10C4E3CC2BC055D70029A850 /* InkNet */;
+			targetProxy = 10C4E3E82BC055D90029A850 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10C4E3EF2BC055D90029A850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10C4E3F02BC055D90029A850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10C4E3F22BC055D90029A850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"InkNet/Preview Content\"";
+				DEVELOPMENT_TEAM = 75DE4KA4WT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepware.InkNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10C4E3F32BC055D90029A850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"InkNet/Preview Content\"";
+				DEVELOPMENT_TEAM = 75DE4KA4WT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepware.InkNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		10C4E3F52BC055D90029A850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75DE4KA4WT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepware.InkNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InkNet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InkNet";
+			};
+			name = Debug;
+		};
+		10C4E3F62BC055D90029A850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75DE4KA4WT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepware.InkNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InkNet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InkNet";
+			};
+			name = Release;
+		};
+		10C4E3F82BC055D90029A850 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75DE4KA4WT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepware.InkNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InkNet;
+			};
+			name = Debug;
+		};
+		10C4E3F92BC055D90029A850 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75DE4KA4WT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sheepware.InkNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = InkNet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10C4E3C82BC055D70029A850 /* Build configuration list for PBXProject "InkNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C4E3EF2BC055D90029A850 /* Debug */,
+				10C4E3F02BC055D90029A850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C4E3F12BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C4E3F22BC055D90029A850 /* Debug */,
+				10C4E3F32BC055D90029A850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C4E3F42BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C4E3F52BC055D90029A850 /* Debug */,
+				10C4E3F62BC055D90029A850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10C4E3F72BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10C4E3F82BC055D90029A850 /* Debug */,
+				10C4E3F92BC055D90029A850 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10C4E3C52BC055D70029A850 /* Project object */;
+}
