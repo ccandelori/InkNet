@@ -24,6 +24,7 @@
 		10C4E4092BC060B00029A850 /* BlitzBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E4082BC060AF0029A850 /* BlitzBold.otf */; };
 		10C4E40B2BC060BB0029A850 /* BlitzMain.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E40A2BC060BB0029A850 /* BlitzMain.otf */; };
 		10C4E4102BC09BF30029A850 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E40F2BC09BF30029A850 /* StageView.swift */; };
+		10C4E4132BC1B3F30029A850 /* SalmonRunModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4122BC1B3F30029A850 /* SalmonRunModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		10C4E40A2BC060BB0029A850 /* BlitzMain.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlitzMain.otf; sourceTree = "<group>"; };
 		10C4E40D2BC061080029A850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		10C4E40F2BC09BF30029A850 /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
+		10C4E4122BC1B3F30029A850 /* SalmonRunModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmonRunModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,17 +117,11 @@
 		10C4E3CF2BC055D70029A850 /* InkNet */ = {
 			isa = PBXGroup;
 			children = (
+				10C4E4112BC1B0C60029A850 /* Models */,
 				10C4E40E2BC09BA20029A850 /* Views */,
 				10C4E40D2BC061080029A850 /* Info.plist */,
 				10C4E40C2BC060BF0029A850 /* CustomFonts */,
 				10C4E3D02BC055D70029A850 /* InkNetApp.swift */,
-				10C4E3D22BC055D70029A850 /* ContentView.swift */,
-				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
-				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
-				10C4E4042BC05C760029A850 /* GearView.swift */,
-				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
-				10C4E3FA2BC058210029A850 /* ScheduleModel.swift */,
-				10C4E3FC2BC058570029A850 /* ScheduleStore.swift */,
 				10C4E3D42BC055D90029A850 /* Assets.xcassets */,
 				10C4E3D62BC055D90029A850 /* Preview Content */,
 			);
@@ -169,10 +165,25 @@
 		10C4E40E2BC09BA20029A850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10C4E3D22BC055D70029A850 /* ContentView.swift */,
 				10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */,
+				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
+				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
+				10C4E4042BC05C760029A850 /* GearView.swift */,
+				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
 				10C4E40F2BC09BF30029A850 /* StageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		10C4E4112BC1B0C60029A850 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3FA2BC058210029A850 /* ScheduleModel.swift */,
+				10C4E3FC2BC058570029A850 /* ScheduleStore.swift */,
+				10C4E4122BC1B3F30029A850 /* SalmonRunModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10C4E3F12BC055D90029A850 /* Build configuration list for PBXNativeTarget "InkNet" */;
 			buildPhases = (
+				10C4E4142BC1BC170029A850 /* SwiftLint */,
 				10C4E3C92BC055D70029A850 /* Sources */,
 				10C4E3CA2BC055D70029A850 /* Frameworks */,
 				10C4E3CB2BC055D70029A850 /* Resources */,
@@ -302,11 +314,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10C4E4142BC1BC170029A850 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#PATH=/opt/homebrew/bin:$PATH\n#if [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n#  if which swiftlint >/dev/null; then\n#    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n#  fi\n#fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10C4E3C92BC055D70029A850 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C4E4132BC1B3F30029A850 /* SalmonRunModel.swift in Sources */,
 				10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */,
 				10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */,
 				10C4E3FF2BC05C4F0029A850 /* ScheduleView.swift in Sources */,

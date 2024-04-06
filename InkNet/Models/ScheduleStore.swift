@@ -15,6 +15,9 @@ class ScheduleStore: ObservableObject {
     private let scheduleCacheKey = "scheduleCache"
     private let cacheExpirationKey = "cacheExpiration"
     private let scheduleURL = "https://splatoon3.ink/data/schedules.json"
+    private let gearURL = "https://splatoon3.ink/data/gear.json"
+    private let coopURL = "https://splatoon3.ink/data/coop.json"
+    private let splatfestURL = "https://splatoon3.ink/data/festivals.json"
 
     var nextHourDate: Date {
         let calendar = Calendar.current
@@ -96,6 +99,14 @@ class ScheduleStore: ObservableObject {
         return customizedTimeString
     }
 
+    func formatDateTime(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "M/d h:mm a"
+        formatter.amSymbol = "a.m."
+        formatter.pmSymbol = "p.m."
+        return formatter.string(from: date)
+    }
+
     func getRegularSchedules() -> [BankaraSchedulesNode]? {
         return scheduleData?.data.regularSchedules.nodes
     }
@@ -116,7 +127,7 @@ class ScheduleStore: ObservableObject {
         return scheduleData?.data.festSchedules.nodes
     }
 
-    func fetchCoopGroupingSchedules(from scheduleData: ScheduleData) -> [PurpleNode] {
-        return scheduleData.data.coopGroupingSchedule.regularSchedules.nodes
+    func getCoopGroupingSchedules() -> [PurpleNode]? {
+        return scheduleData?.data.coopGroupingSchedule.regularSchedules.nodes
     }
 }
