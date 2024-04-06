@@ -7,15 +7,35 @@
 
 import SwiftUI
 
+enum TabSelection  {
+    case schedule
+    case salmonRun
+    case challenge
+    case gear
+    case splatfest
+}
+
 struct ContentView: View {
+    @State var currentTab: TabSelection = .schedule
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView(selection: $currentTab) {
+            ScheduleView()
+                .tabItem { Label("Schedule", systemImage: "") }
+                .tag(TabSelection.schedule)
+            SalmonRunView()
+                .tabItem { Label("Salmon Run", systemImage: "") }
+                .tag(TabSelection.salmonRun)
+            ChallengeView()
+                .tabItem { Label("Challenge", systemImage: "") }
+                .tag(TabSelection.challenge)
+            GearView()
+                .tabItem { Label("Gear", systemImage: "") }
+                .tag(TabSelection.gear)
+            SplatFestView()
+                .tabItem { Label("Splatfest", systemImage: "") }
+                .tag(TabSelection.splatfest)
         }
-        .padding()
     }
 }
 

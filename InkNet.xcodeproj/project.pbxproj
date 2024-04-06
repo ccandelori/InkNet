@@ -14,6 +14,16 @@
 		10C4E3E22BC055D90029A850 /* InkNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3E12BC055D90029A850 /* InkNetTests.swift */; };
 		10C4E3EC2BC055D90029A850 /* InkNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3EB2BC055D90029A850 /* InkNetUITests.swift */; };
 		10C4E3EE2BC055D90029A850 /* InkNetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */; };
+		10C4E3FB2BC058210029A850 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FA2BC058210029A850 /* ScheduleModel.swift */; };
+		10C4E3FD2BC058570029A850 /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FC2BC058570029A850 /* ScheduleStore.swift */; };
+		10C4E3FF2BC05C4F0029A850 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */; };
+		10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */; };
+		10C4E4032BC05C6B0029A850 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4022BC05C6B0029A850 /* ChallengeView.swift */; };
+		10C4E4052BC05C760029A850 /* GearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4042BC05C760029A850 /* GearView.swift */; };
+		10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4062BC05C810029A850 /* SplatFestView.swift */; };
+		10C4E4092BC060B00029A850 /* BlitzBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E4082BC060AF0029A850 /* BlitzBold.otf */; };
+		10C4E40B2BC060BB0029A850 /* BlitzMain.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E40A2BC060BB0029A850 /* BlitzMain.otf */; };
+		10C4E4102BC09BF30029A850 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E40F2BC09BF30029A850 /* StageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,17 @@
 		10C4E3E72BC055D90029A850 /* InkNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InkNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C4E3EB2BC055D90029A850 /* InkNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetUITests.swift; sourceTree = "<group>"; };
 		10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10C4E3FA2BC058210029A850 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		10C4E3FC2BC058570029A850 /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = "<group>"; };
+		10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmonRunView.swift; sourceTree = "<group>"; };
+		10C4E4022BC05C6B0029A850 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		10C4E4042BC05C760029A850 /* GearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearView.swift; sourceTree = "<group>"; };
+		10C4E4062BC05C810029A850 /* SplatFestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatFestView.swift; sourceTree = "<group>"; };
+		10C4E4082BC060AF0029A850 /* BlitzBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlitzBold.otf; sourceTree = "<group>"; };
+		10C4E40A2BC060BB0029A850 /* BlitzMain.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlitzMain.otf; sourceTree = "<group>"; };
+		10C4E40D2BC061080029A850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		10C4E40F2BC09BF30029A850 /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +115,17 @@
 		10C4E3CF2BC055D70029A850 /* InkNet */ = {
 			isa = PBXGroup;
 			children = (
+				10C4E40E2BC09BA20029A850 /* Views */,
+				10C4E40D2BC061080029A850 /* Info.plist */,
+				10C4E40C2BC060BF0029A850 /* CustomFonts */,
 				10C4E3D02BC055D70029A850 /* InkNetApp.swift */,
 				10C4E3D22BC055D70029A850 /* ContentView.swift */,
+				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
+				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
+				10C4E4042BC05C760029A850 /* GearView.swift */,
+				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
+				10C4E3FA2BC058210029A850 /* ScheduleModel.swift */,
+				10C4E3FC2BC058570029A850 /* ScheduleStore.swift */,
 				10C4E3D42BC055D90029A850 /* Assets.xcassets */,
 				10C4E3D62BC055D90029A850 /* Preview Content */,
 			);
@@ -125,6 +155,24 @@
 				10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */,
 			);
 			path = InkNetUITests;
+			sourceTree = "<group>";
+		};
+		10C4E40C2BC060BF0029A850 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E4082BC060AF0029A850 /* BlitzBold.otf */,
+				10C4E40A2BC060BB0029A850 /* BlitzMain.otf */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		10C4E40E2BC09BA20029A850 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */,
+				10C4E40F2BC09BF30029A850 /* StageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +281,8 @@
 			files = (
 				10C4E3D82BC055D90029A850 /* Preview Assets.xcassets in Resources */,
 				10C4E3D52BC055D90029A850 /* Assets.xcassets in Resources */,
+				10C4E40B2BC060BB0029A850 /* BlitzMain.otf in Resources */,
+				10C4E4092BC060B00029A850 /* BlitzBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */,
+				10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */,
+				10C4E3FF2BC05C4F0029A850 /* ScheduleView.swift in Sources */,
+				10C4E3FD2BC058570029A850 /* ScheduleStore.swift in Sources */,
+				10C4E4052BC05C760029A850 /* GearView.swift in Sources */,
+				10C4E4102BC09BF30029A850 /* StageView.swift in Sources */,
+				10C4E4032BC05C6B0029A850 /* ChallengeView.swift in Sources */,
+				10C4E3FB2BC058210029A850 /* ScheduleModel.swift in Sources */,
 				10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */,
 				10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */,
 			);
@@ -425,6 +483,7 @@
 				DEVELOPMENT_TEAM = 75DE4KA4WT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InkNet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +513,7 @@
 				DEVELOPMENT_TEAM = 75DE4KA4WT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InkNet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
