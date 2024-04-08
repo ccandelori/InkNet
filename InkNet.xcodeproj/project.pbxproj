@@ -25,6 +25,7 @@
 		10C4E40B2BC060BB0029A850 /* BlitzMain.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E40A2BC060BB0029A850 /* BlitzMain.otf */; };
 		10C4E4102BC09BF30029A850 /* StageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E40F2BC09BF30029A850 /* StageView.swift */; };
 		10C4E4132BC1B3F30029A850 /* SalmonRunModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4122BC1B3F30029A850 /* SalmonRunModel.swift */; };
+		10C4E4162BC3305E0029A850 /* HangTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4152BC3305E0029A850 /* HangTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		10C4E40D2BC061080029A850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		10C4E40F2BC09BF30029A850 /* StageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageView.swift; sourceTree = "<group>"; };
 		10C4E4122BC1B3F30029A850 /* SalmonRunModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmonRunModel.swift; sourceTree = "<group>"; };
+		10C4E4152BC3305E0029A850 /* HangTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				10C4E3D22BC055D70029A850 /* ContentView.swift */,
 				10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */,
 				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
+				10C4E4152BC3305E0029A850 /* HangTabView.swift */,
 				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
 				10C4E4042BC05C760029A850 /* GearView.swift */,
 				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
@@ -349,6 +352,7 @@
 				10C4E4052BC05C760029A850 /* GearView.swift in Sources */,
 				10C4E4102BC09BF30029A850 /* StageView.swift in Sources */,
 				10C4E4032BC05C6B0029A850 /* ChallengeView.swift in Sources */,
+				10C4E4162BC3305E0029A850 /* HangTabView.swift in Sources */,
 				10C4E3FB2BC058210029A850 /* ScheduleModel.swift in Sources */,
 				10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */,
 				10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */,
