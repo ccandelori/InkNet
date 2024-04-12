@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct GearView: View {
-    var body: some View {
-        Text("Gear Sale View")
-    }
+  var body: some View {
+    Text("Gear Sale View")
+  }
 }
 
 #Preview {
-    GearView()
+  GearView()
 }

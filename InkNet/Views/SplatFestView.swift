@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SplatFestView: View {
-    var body: some View {
-        Text("SplatFest Info View")
-    }
+  var body: some View {
+    Text("SplatFest Info View")
+  }
 }
 
 #Preview {
-    SplatFestView()
+  SplatFestView()
 }
