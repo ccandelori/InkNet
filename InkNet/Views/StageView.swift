@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StageView: View {
   let stages: [Stage]
+  var onTap: (URL, String) -> Void
 
   var body: some View {
     HStack {
@@ -29,9 +30,14 @@ struct StageView: View {
             .foregroundColor(.white)
             .padding(.horizontal, 4)
             .background(.black)
-            .alignmentGuide(.bottom) { _ in 10 } // Guide for bottom edge at 40pts
+            .alignmentGuide(.bottom) { _ in 10 }
         }
         .frame(height: 125)
+        .onTapGesture {
+          if let url = URL(string: stage.image.url) {
+            onTap(url, stage.name)
+          }
+        }
       }
     }
   }

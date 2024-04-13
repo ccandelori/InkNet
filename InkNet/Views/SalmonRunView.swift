@@ -17,7 +17,7 @@ struct SalmonRunView: View {
           .resizable()
           .ignoresSafeArea(.all)
 
-        HangTabView(color: "AnarchyOrange")
+        HangTabView(color: "AnarchyOrange", overlay: "monsters-transparent-bg")
         VStack(alignment: .leading) {
           ShadedSplatoon1Text(text: "Salmon Run", size: 34.0)
             .padding(.leading)
@@ -186,6 +186,7 @@ struct ShadedSplatoon1Text: View {
   var body: some View {
     ZStack {
       Text(text)
+        .foregroundColor(.black)
         .offset(x: 2, y: 2)
       Text(text)
         .foregroundColor(.white)
@@ -201,6 +202,7 @@ struct ShadedSplatoon2Text: View {
   var body: some View {
     ZStack {
       Text(text)
+        .foregroundColor(.black)
         .offset(x: 2, y: 2)
       Text(text)
         .foregroundColor(.white)

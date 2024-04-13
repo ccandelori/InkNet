@@ -21,13 +21,13 @@ struct ContentView: View {
   var body: some View {
     TabView(selection: $currentTab) {
       ScheduleView()
-        .tabItem { Label("Schedule", systemImage: "") }
+        .tabItem { Label("Schedule", image: "regular") }
         .tag(TabSelection.schedule)
       SalmonRunView()
-        .tabItem { Label("Salmon Run", systemImage: "") }
+        .tabItem { Label("Salmon Run", image: "coop") }
         .tag(TabSelection.salmonRun)
       ChallengeView()
-        .tabItem { Label("Challenge", systemImage: "") }
+        .tabItem { Label("Challenge", image: "event 1") }
         .tag(TabSelection.challenge)
       GearView()
         .tabItem { Label("Gear", systemImage: "") }

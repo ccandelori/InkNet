@@ -17,6 +17,9 @@ struct SplashScreenView: View {
   var body: some View {
     ZStack {
       Color.gray.ignoresSafeArea()
+      Image("little-buddy")
+//        .scaleEffect(scale)
+        .rotationEffect(.degrees(-rotation))
       ShadedSplatoon1Text(text: "InkNet", size: 34.0)
         .scaleEffect(scale)
         .rotationEffect(.degrees(rotation))

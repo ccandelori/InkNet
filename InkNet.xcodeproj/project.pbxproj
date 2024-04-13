@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		102B2F652BC881D900A11457 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F642BC881D900A11457 /* SplashScreenView.swift */; };
+		102B2F672BCA045400A11457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F662BCA045400A11457 /* Constants.swift */; };
+		102B2F692BCA072E00A11457 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F682BCA072E00A11457 /* ScheduleView.swift */; };
 		10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D02BC055D70029A850 /* InkNetApp.swift */; };
 		10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D22BC055D70029A850 /* ContentView.swift */; };
 		10C4E3D52BC055D90029A850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E3D42BC055D90029A850 /* Assets.xcassets */; };
@@ -17,7 +19,7 @@
 		10C4E3EE2BC055D90029A850 /* InkNetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */; };
 		10C4E3FB2BC058210029A850 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FA2BC058210029A850 /* ScheduleModel.swift */; };
 		10C4E3FD2BC058570029A850 /* ScheduleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FC2BC058570029A850 /* ScheduleStore.swift */; };
-		10C4E3FF2BC05C4F0029A850 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */; };
+		10C4E3FF2BC05C4F0029A850 /* ScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3FE2BC05C4F0029A850 /* ScheduleDetailView.swift */; };
 		10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */; };
 		10C4E4032BC05C6B0029A850 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4022BC05C6B0029A850 /* ChallengeView.swift */; };
 		10C4E4052BC05C760029A850 /* GearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E4042BC05C760029A850 /* GearView.swift */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		102B2F642BC881D900A11457 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		102B2F662BCA045400A11457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		102B2F682BCA072E00A11457 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		10C4E3CD2BC055D70029A850 /* InkNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C4E3D02BC055D70029A850 /* InkNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetApp.swift; sourceTree = "<group>"; };
 		10C4E3D22BC055D70029A850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		10C4E3ED2BC055D90029A850 /* InkNetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		10C4E3FA2BC058210029A850 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		10C4E3FC2BC058570029A850 /* ScheduleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStore.swift; sourceTree = "<group>"; };
-		10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		10C4E3FE2BC05C4F0029A850 /* ScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailView.swift; sourceTree = "<group>"; };
 		10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalmonRunView.swift; sourceTree = "<group>"; };
 		10C4E4022BC05C6B0029A850 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		10C4E4042BC05C760029A850 /* GearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				10C4E3D42BC055D90029A850 /* Assets.xcassets */,
 				10C4E3D62BC055D90029A850 /* Preview Content */,
 				102B2F642BC881D900A11457 /* SplashScreenView.swift */,
+				102B2F662BCA045400A11457 /* Constants.swift */,
 			);
 			path = InkNet;
 			sourceTree = "<group>";
@@ -171,13 +176,14 @@
 			isa = PBXGroup;
 			children = (
 				10C4E3D22BC055D70029A850 /* ContentView.swift */,
-				10C4E3FE2BC05C4F0029A850 /* ScheduleView.swift */,
+				10C4E3FE2BC05C4F0029A850 /* ScheduleDetailView.swift */,
+				102B2F682BCA072E00A11457 /* ScheduleView.swift */,
+				10C4E40F2BC09BF30029A850 /* StageView.swift */,
 				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
 				10C4E4152BC3305E0029A850 /* HangTabView.swift */,
 				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
 				10C4E4042BC05C760029A850 /* GearView.swift */,
 				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
-				10C4E40F2BC09BF30029A850 /* StageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,13 +356,15 @@
 				102B2F652BC881D900A11457 /* SplashScreenView.swift in Sources */,
 				10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */,
 				10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */,
-				10C4E3FF2BC05C4F0029A850 /* ScheduleView.swift in Sources */,
+				10C4E3FF2BC05C4F0029A850 /* ScheduleDetailView.swift in Sources */,
+				102B2F692BCA072E00A11457 /* ScheduleView.swift in Sources */,
 				10C4E3FD2BC058570029A850 /* ScheduleStore.swift in Sources */,
 				10C4E4052BC05C760029A850 /* GearView.swift in Sources */,
 				10C4E4102BC09BF30029A850 /* StageView.swift in Sources */,
 				10C4E4032BC05C6B0029A850 /* ChallengeView.swift in Sources */,
 				10C4E4162BC3305E0029A850 /* HangTabView.swift in Sources */,
 				10C4E3FB2BC058210029A850 /* ScheduleModel.swift in Sources */,
+				102B2F672BCA045400A11457 /* Constants.swift in Sources */,
 				10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */,
 				10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */,
 			);

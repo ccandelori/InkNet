@@ -2,45 +2,87 @@
 //  ScheduleView.swift
 //  InkNet
 //
-//  Created by Cameron Candelori on 4/5/24.
+//  Created by Cameron Candelori on 4/12/24.
 //
 
 import SwiftUI
 
 struct ScheduleView: View {
-  @StateObject var scheduleStore = ScheduleStore()
-
   var body: some View {
     NavigationStack {
-      ScrollView {
-        VStack(alignment: .leading, spacing: 10) {
-          if let turfWar = scheduleStore.getRegularSchedules() {
-            ForEach(turfWar, id: \.startTime) { schedule in
-              Text(scheduleStore.formatTime(from: schedule.startTime))
-                .font(.custom("Splatoon1", size: 12.0))
-                .padding(.horizontal)
-                .background(.yellow)
-                .clipShape(RoundedRectangle(cornerRadius: 25.0))
-
-              StageView(stages: schedule.regularMatchSetting!.vsStages)
+      VStack(spacing: -20) {
+        HStack {
+          NavigationLink(destination: ScheduleDetailView()) {
+            HStack {
+              Image("regular")
+              ShadedSplatoon1Text(text: "Regular", size: 21.0)
+            }
+            .frame(maxWidth: 200, maxHeight: 200)
+            .background(
+              ZStack {
+                Color("TurfWarGreen")
+                Image("tapes-transparent")
+                  .resizable()
+                  .scaledToFill()
+              }
+            )
+            .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
+          }
+          NavigationLink(destination: ScheduleDetailView()) {
+            HStack {
+              Image("bankara")
+              ShadedSplatoon1Text(text: "Anarchy", size: 21.0)
+            }
+            .frame(maxWidth: 200, maxHeight: 200)
+            .background(
+              ZStack {
+                Color("AnarchyOrange")
+                Image("tapes-transparent")
+                  .resizable()
+                  .scaledToFill()
+              }
+            )
+          .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
+          }
+        }
+        .padding()
+        NavigationLink(destination: ScheduleDetailView()) {
+          HStack {
+            HStack {
+              Image("event")
+              ShadedSplatoon1Text(text: "Challenge", size: 21.0)
+                .offset(x: -5)
+            }
+            .frame(maxWidth: 200, maxHeight: 200)
+            .offset(x: -5)
+            .background(
+              ZStack {
+                Color("ChallengeMagenta")
+                Image("tapes-transparent")
+                  .resizable()
+                  .scaledToFill()
+              }
+            )
+            .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
+            NavigationLink(destination: ScheduleDetailView()) {
+              HStack {
+                Image("x")
+                ShadedSplatoon1Text(text: "X Rank", size: 21.0)
+              }
+              .frame(maxWidth: 200, maxHeight: 200)
+              .background(
+                ZStack {
+                  Color("XRankTeal")
+                  Image("tapes-transparent")
+                    .resizable()
+                    .scaledToFill()
+                }
+              )
+            .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
             }
           }
+          .padding()
         }
-        .padding(.horizontal)
-      }
-      .toolbar  {
-        ToolbarItem(placement: .principal) {
-          VStack {
-            Text("Turf War")
-              .font(.custom("Splatoon1", size: 24.0))
-          }
-        }
-      }
-      .listStyle(.plain)
-    }
-    .onAppear {
-      Task {
-        await scheduleStore.fetchScheduleDataIfNeeded()
       }
     }
   }

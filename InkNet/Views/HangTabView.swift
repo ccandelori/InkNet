@@ -9,17 +9,18 @@ import SwiftUI
 
 struct HangTabView: View {
   let color: String
+  let overlay: String
 
   var body: some View {
     ZStack(alignment: .top) {
-      Image("monsters-transparent-bg")
+      Image(overlay)
         .resizable()
         .aspectRatio(contentMode: .fit)
         .rotationEffect(.degrees(90))
         .frame(width: .infinity, height: 600)
         .scaleEffect(1.7)
-        .background(Color("AnarchyOrange"))
-        .clipShape(RoundedRectangle(cornerRadius: 16.0))
+        .background(Color(color))
+        .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
         .padding(.horizontal, 5)
 
 
@@ -34,5 +35,5 @@ struct HangTabView: View {
 }
 
 #Preview {
-  HangTabView(color: "AnarchyOrange")
+  HangTabView(color: "AnarchyOrange", overlay: "monsters-transparent-bg")
 }
