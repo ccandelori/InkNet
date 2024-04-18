@@ -27,7 +27,7 @@ struct ContentView: View {
         .tabItem { Label("Salmon Run", image: "coop") }
         .tag(TabSelection.salmonRun)
       ChallengeView()
-        .tabItem { Label("Challenge", image: "event 1") }
+        .tabItem { Label("Challenge", image: "event") }
         .tag(TabSelection.challenge)
       GearView()
         .tabItem { Label("Gear", systemImage: "") }

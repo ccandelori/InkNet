@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct ScheduleDetailView: View {
-  @StateObject var scheduleStore = ScheduleStore()
+struct RegularScheduleDetailView: View {
+  @EnvironmentObject var scheduleStore: ScheduleStore
   @State private var selectedImageUrl: URL?
   @State private var selectedStageName: String?
+  @State private var showReminderView = false
 
   var body: some View {
     NavigationStack {
@@ -53,8 +54,20 @@ struct ScheduleDetailView: View {
               ShadedSplatoon1Text(text: "Turf War", size: 24.0)
             }
           }
+          ToolbarItem(placement: .topBarTrailing) {
+            Button {
+              showReminderView = true
+            } label: {
+              Image(systemName: "bell")
+                .padding()
+                .foregroundColor(Color("TurfWarGreen"))
+            }
+            .sheet(isPresented: $showReminderView) {
+              ReminderView()
+            }
+          }
         }
-      .listStyle(.plain)
+        .listStyle(.plain)
       }
     }
     .onAppear {
@@ -109,5 +122,6 @@ struct FullImageView: View {
 }
 
 #Preview {
-  ScheduleDetailView()
+  RegularScheduleDetailView()
+    .environmentObject(ScheduleStore())
 }

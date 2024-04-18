@@ -130,4 +130,28 @@ class ScheduleStore: ObservableObject {
   func getCoopGroupingSchedules() -> [PurpleNode]? {
     return scheduleData?.data.coopGroupingSchedule.regularSchedules.nodes
   }
+
+  func getStages() -> [VsStagesNode]? {
+    return scheduleData?.data.vsStages.nodes
+  }
 }
+
+
+// MARK: - Extensions
+extension ScheduleStore {
+  static let shared = ScheduleStore()
+}
+
+//extension ScheduleStore {
+//  static var mockScheduleData: ScheduleData {
+//    let stages = [Stage(vsStageID: 1, name: "Mock Stage", image: UserIcon(url: "https://example.com/stage.jpg"), id: "stage1", thumbnailImage: <#UserIcon?#>)]
+//    let matchSetting = MatchSetting(isVsSetting: .regularMatchSetting, typename: .regularMatchSetting, vsStages: stages, vsRule: VsRule(name: .turfWar, rule: .turfWar, id: UserID(rawValue: "rule1") ?? ""))
+//    let scheduleNode = BankaraSchedulesNode(startTime: Date(), endTime: Date().addingTimeInterval(3600), regularMatchSetting: matchSetting)
+//    let schedules = Schedules(nodes: [scheduleNode])
+//
+//    let data = DataClass(regularSchedules: schedules, bankaraSchedules: schedules, xSchedules: schedules, eventSchedules: EventSchedules(nodes: []), festSchedules: schedules, coopGroupingSchedule: CoopGroupingSchedule(), currentFest: nil, currentPlayer: CurrentPlayer(userIcon: UserIcon(url: "https://example.com/icon.jpg")), vsStages: VsStages(nodes: []))
+//
+//    return ScheduleData(data: data)
+//  }
+//}
+//

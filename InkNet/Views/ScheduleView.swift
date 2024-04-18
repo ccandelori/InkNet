@@ -12,77 +12,23 @@ struct ScheduleView: View {
     NavigationStack {
       VStack(spacing: -20) {
         HStack {
-          NavigationLink(destination: ScheduleDetailView()) {
-            HStack {
-              Image("regular")
-              ShadedSplatoon1Text(text: "Regular", size: 21.0)
-            }
-            .frame(maxWidth: 200, maxHeight: 200)
-            .background(
-              ZStack {
-                Color("TurfWarGreen")
-                Image("tapes-transparent")
-                  .resizable()
-                  .scaledToFill()
-              }
-            )
-            .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
+          NavigationLink(destination: RegularScheduleDetailView()) {
+            ModeCardView(mode: "Regular", imageName: "regular", color: "TurfWarGreen")
           }
-          NavigationLink(destination: ScheduleDetailView()) {
-            HStack {
-              Image("bankara")
-              ShadedSplatoon1Text(text: "Anarchy", size: 21.0)
-            }
-            .frame(maxWidth: 200, maxHeight: 200)
-            .background(
-              ZStack {
-                Color("AnarchyOrange")
-                Image("tapes-transparent")
-                  .resizable()
-                  .scaledToFill()
-              }
-            )
-          .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
+          NavigationLink(destination: RegularScheduleDetailView()) {
+            ModeCardView(mode: "Anarchy", imageName: "bankara", color: "AnarchyOrange")
           }
         }
         .padding()
-        NavigationLink(destination: ScheduleDetailView()) {
-          HStack {
-            HStack {
-              Image("event")
-              ShadedSplatoon1Text(text: "Challenge", size: 21.0)
-                .offset(x: -5)
-            }
-            .frame(maxWidth: 200, maxHeight: 200)
-            .offset(x: -5)
-            .background(
-              ZStack {
-                Color("ChallengeMagenta")
-                Image("tapes-transparent")
-                  .resizable()
-                  .scaledToFill()
-              }
-            )
-            .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
-            NavigationLink(destination: ScheduleDetailView()) {
-              HStack {
-                Image("x")
-                ShadedSplatoon1Text(text: "X Rank", size: 21.0)
-              }
-              .frame(maxWidth: 200, maxHeight: 200)
-              .background(
-                ZStack {
-                  Color("XRankTeal")
-                  Image("tapes-transparent")
-                    .resizable()
-                    .scaledToFill()
-                }
-              )
-            .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
-            }
+        HStack {
+          NavigationLink(destination: RegularScheduleDetailView()) {
+            ModeCardView(mode: "Challenge", imageName: "event", color: "ChallengeMagenta")
           }
-          .padding()
+          NavigationLink(destination: RegularScheduleDetailView()) {
+            ModeCardView(mode: "X Rank", imageName: "x", color: "XRankTeal")
+          }
         }
+        .padding()
       }
     }
   }
@@ -90,4 +36,34 @@ struct ScheduleView: View {
 
 #Preview {
   ScheduleView()
+    .environmentObject(ScheduleStore())
+}
+
+struct ModeCardView: View {
+  let mode: String
+  let imageName: String
+  let color: String
+
+  var body: some View {
+    VStack(spacing: 0) {
+      Image(imageName)
+      ShadedSplatoon1Text(text: mode, size: 21.0)
+    }
+    .frame(maxWidth: 200, maxHeight: 200)
+    .background(
+      ZStack {
+        Color(color)
+          .overlay(
+            LinearGradient(
+              colors: [.white.opacity(0.1), .black.opacity(0.2)],
+              startPoint: .top,
+              endPoint: .bottom))
+        Image("tapes-transparent")
+          .resizable()
+          .scaledToFill()
+          .rotationEffect(.degrees(Double.random(in: 0...360)))
+      }
+    )
+    .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
+  }
 }
