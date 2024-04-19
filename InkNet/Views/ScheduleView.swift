@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScheduleView: View {
+  @EnvironmentObject var scheduleStore: ScheduleStore
+
   var body: some View {
     NavigationStack {
       VStack(spacing: -20) {
@@ -36,6 +38,11 @@ struct ScheduleView: View {
           .opacity(0.2)
           .scaleEffect(0.65)
       )
+    }
+    .onAppear {
+      Task {
+        await scheduleStore.fetchScheduleDataIfNeeded()
+      }
     }
   }
 }

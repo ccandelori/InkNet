@@ -11,6 +11,7 @@
 		102B2F672BCA045400A11457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F662BCA045400A11457 /* Constants.swift */; };
 		102B2F692BCA072E00A11457 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F682BCA072E00A11457 /* ScheduleView.swift */; };
 		102B2F6C2BCD930100A11457 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F6B2BCD930100A11457 /* ReminderView.swift */; };
+		10540D092BD1D59100E02A84 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D082BD1D59100E02A84 /* EventScheduleView.swift */; };
 		109AF5E42BCEF62600162E1E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109AF5E32BCEF62600162E1E /* NotificationManager.swift */; };
 		10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D02BC055D70029A850 /* InkNetApp.swift */; };
 		10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D22BC055D70029A850 /* ContentView.swift */; };
@@ -55,6 +56,7 @@
 		102B2F662BCA045400A11457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		102B2F682BCA072E00A11457 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		102B2F6B2BCD930100A11457 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		10540D082BD1D59100E02A84 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
 		109AF5E32BCEF62600162E1E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		10C4E3CD2BC055D70029A850 /* InkNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C4E3D02BC055D70029A850 /* InkNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetApp.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				10C4E3D22BC055D70029A850 /* ContentView.swift */,
 				10C4E3FE2BC05C4F0029A850 /* RegularScheduleDetailView.swift */,
+				10540D082BD1D59100E02A84 /* EventScheduleView.swift */,
 				102B2F6B2BCD930100A11457 /* ReminderView.swift */,
 				102B2F682BCA072E00A11457 /* ScheduleView.swift */,
 				10C4E40F2BC09BF30029A850 /* StageView.swift */,
@@ -370,6 +373,7 @@
 				109AF5E42BCEF62600162E1E /* NotificationManager.swift in Sources */,
 				102B2F652BC881D900A11457 /* SplashScreenView.swift in Sources */,
 				10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */,
+				10540D092BD1D59100E02A84 /* EventScheduleView.swift in Sources */,
 				10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */,
 				10C4E3FF2BC05C4F0029A850 /* RegularScheduleDetailView.swift in Sources */,
 				102B2F692BCA072E00A11457 /* ScheduleView.swift in Sources */,

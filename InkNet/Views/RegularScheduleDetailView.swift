@@ -42,11 +42,6 @@ struct RegularScheduleDetailView: View {
           }
         }
       }
-      .onAppear {
-        Task {
-          await scheduleStore.fetchScheduleDataIfNeeded()
-        }
-      }
     }
   }
 

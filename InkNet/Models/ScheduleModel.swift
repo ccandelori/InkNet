@@ -33,7 +33,7 @@ struct DataClass: Codable {
     case eventSchedules
     case festSchedules
     case coopGroupingSchedule
-//    case currentFest
+//  case currentFest
     case currentPlayer
     case vsStages
   }
@@ -342,15 +342,39 @@ struct EventSchedules: Codable {
 }
 
 // MARK: - EventSchedulesNode
-struct EventSchedulesNode: Codable {
+//struct EventSchedulesNode: Codable {
+//  let leagueMatchSetting: MatchSetting
+//  let timePeriods: [TimePeriod]
+//
+//  enum CodingKeys: String, CodingKey {
+//    case leagueMatchSetting
+//    case timePeriods
+//  }
+//}
+
+struct EventSchedulesNode: Codable, Identifiable {
+  var id: String {
+    leagueMatchSetting.leagueMatchEvent?.leagueMatchEventID ?? UUID().uuidString
+  }
   let leagueMatchSetting: MatchSetting
   let timePeriods: [TimePeriod]
 
-  enum CodingKeys: String, CodingKey {
-    case leagueMatchSetting
-    case timePeriods
+  var challengeType: ChallengeType {
+    switch leagueMatchSetting.leagueMatchEvent?.leagueMatchEventID {
+    case "FastMove":
+      return .weekly
+    case "MonthlyLeagueMatchReal":
+      return .monthly
+    default:
+      return .seasonal
+    }
   }
 }
+
+enum ChallengeType: CaseIterable {
+  case weekly, monthly, seasonal
+}
+
 
 // MARK: - TimePeriod
 struct TimePeriod: Codable {
@@ -414,7 +438,6 @@ struct VsStagesNode: Codable {
 // MARK: - Encode/decode helpers
 
 class JSONNull: Codable, Hashable {
-
   public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
     return true
   }
@@ -432,7 +455,9 @@ class JSONNull: Codable, Hashable {
   public required init(from decoder: Decoder) throws {
     let container = try decoder.singleValueContainer()
     if !container.decodeNil() {
-      throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+      throw DecodingError.typeMismatch(
+        JSONNull.self,
+        DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
     }
   }
 

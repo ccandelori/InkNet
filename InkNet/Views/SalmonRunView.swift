@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SalmonRunView: View {
-  @StateObject var scheduleStore = ScheduleStore()
+  @EnvironmentObject var scheduleStore: ScheduleStore
   @State private var selectedImageUrl: URL?
   @State private var selectedStageName: String?
 
@@ -197,11 +197,6 @@ struct ComingUpLabel: View {
   }
 }
 
-
-#Preview {
-  SalmonRunView()
-}
-
 struct StageImage: View {
   let imageURL: String
   let stageName: String
@@ -295,4 +290,9 @@ struct ShadedSplatoon2Text: View {
     }
     .font(.custom("Splatoon2", size: size))
   }
+}
+
+#Preview {
+  SalmonRunView()
+    .environmentObject(ScheduleStore())
 }
