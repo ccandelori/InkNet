@@ -80,9 +80,17 @@ struct RegularScheduleDetailView: View {
         .background(Color("TurfWarGreen"))
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
 
-      StageView(stages: schedule.regularMatchSetting!.vsStages) { url, name in
-        self.selectedImageUrl = url
-        self.selectedStageName = name
+      // Handle optional `regularMatchSetting` and `vsStages`
+      if let stages = schedule.regularMatchSetting?.vsStages {
+        StageView(stages: stages) { url, name in
+          self.selectedImageUrl = url
+          self.selectedStageName = name
+        }
+      } else {
+        // Provide an alternative view or handling if `vsStages` is nil
+        Text("No stages available")
+          .padding()
+          .foregroundColor(.gray)
       }
     }
   }
