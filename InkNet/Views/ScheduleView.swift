@@ -30,6 +30,12 @@ struct ScheduleView: View {
         }
         .padding()
       }
+      .background(
+        Image("bg-light")
+          .ignoresSafeArea(.all)
+          .opacity(0.2)
+          .scaleEffect(0.65)
+      )
     }
   }
 }
