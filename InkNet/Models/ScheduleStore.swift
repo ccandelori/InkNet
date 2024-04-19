@@ -67,23 +67,48 @@ class ScheduleStore: ObservableObject {
   }
 
   func fetchScheduleData() async {
-    guard let url = URL(string: scheduleURL) else { return }
+    guard let url = URL(string: scheduleURL) else {
+      print("Invalid URL.")
+      return
+    }
     isLoading = true
 
     do {
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .iso8601
-      let (data, _) = try await URLSession.shared.data(from: url)
-      let schedule = try decoder.decode(ScheduleData.self, from: data)
+      let (data, response) = try await URLSession.shared.data(from: url)
 
+      // Check for HTTP response errors or status codes here.
+      if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+        print("HTTP Error: Status code \(httpResponse.statusCode)")
+        print("HTTP Response: \(httpResponse)")
+      }
+
+      // Attempt to decode the JSON data to your ScheduleData model.
+      let schedule = try decoder.decode(ScheduleData.self, from: data)
       await MainActor.run {
         self.scheduleData = schedule
         self.isLoading = false
         cacheScheduleData(schedule)
       }
+    } catch let DecodingError.dataCorrupted(context) {
+      await MainActor.run { self.isLoading = false }
+      print("Data corrupted: \(context.debugDescription)")
+    } catch let DecodingError.keyNotFound(key, context) {
+      await MainActor.run { self.isLoading = false }
+      print("Key '\(key)' not found in JSON: \(context.debugDescription)")
+      print("Coding Path: \(context.codingPath)")
+    } catch let DecodingError.valueNotFound(value, context) {
+      await MainActor.run { self.isLoading = false }
+      print("Value '\(value)' not found: \(context.debugDescription)")
+      print("Coding Path: \(context.codingPath)")
+    } catch let DecodingError.typeMismatch(type, context) {
+      await MainActor.run { self.isLoading = false }
+      print("Type '\(type)' mismatch: \(context.debugDescription)")
+      print("Coding Path: \(context.codingPath)")
     } catch {
       await MainActor.run { self.isLoading = false }
-      print(error.localizedDescription)
+      print("Unexpected error: \(error.localizedDescription)")
     }
   }
 
@@ -123,9 +148,9 @@ class ScheduleStore: ObservableObject {
     return scheduleData?.data.eventSchedules.nodes
   }
 
-  func getFestSchedules() -> [BankaraSchedulesNode]? {
-    return scheduleData?.data.festSchedules.nodes
-  }
+//  func getFestSchedules() -> [BankaraSchedulesNode]? {
+//    return scheduleData?.data.festSchedules.nodes
+//  }
 
   func getCoopGroupingSchedules() -> [PurpleNode]? {
     return scheduleData?.data.coopGroupingSchedule.regularSchedules.nodes
@@ -141,17 +166,3 @@ class ScheduleStore: ObservableObject {
 extension ScheduleStore {
   static let shared = ScheduleStore()
 }
-
-//extension ScheduleStore {
-//  static var mockScheduleData: ScheduleData {
-//    let stages = [Stage(vsStageID: 1, name: "Mock Stage", image: UserIcon(url: "https://example.com/stage.jpg"), id: "stage1", thumbnailImage: <#UserIcon?#>)]
-//    let matchSetting = MatchSetting(isVsSetting: .regularMatchSetting, typename: .regularMatchSetting, vsStages: stages, vsRule: VsRule(name: .turfWar, rule: .turfWar, id: UserID(rawValue: "rule1") ?? ""))
-//    let scheduleNode = BankaraSchedulesNode(startTime: Date(), endTime: Date().addingTimeInterval(3600), regularMatchSetting: matchSetting)
-//    let schedules = Schedules(nodes: [scheduleNode])
-//
-//    let data = DataClass(regularSchedules: schedules, bankaraSchedules: schedules, xSchedules: schedules, eventSchedules: EventSchedules(nodes: []), festSchedules: schedules, coopGroupingSchedule: CoopGroupingSchedule(), currentFest: nil, currentPlayer: CurrentPlayer(userIcon: UserIcon(url: "https://example.com/icon.jpg")), vsStages: VsStages(nodes: []))
-//
-//    return ScheduleData(data: data)
-//  }
-//}
-//

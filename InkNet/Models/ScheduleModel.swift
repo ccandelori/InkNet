@@ -20,9 +20,9 @@ struct DataClass: Codable {
   let bankaraSchedules: Schedules
   let xSchedules: Schedules
   let eventSchedules: EventSchedules
-  let festSchedules: Schedules
+  let festSchedules: FestSchedules
   let coopGroupingSchedule: CoopGroupingSchedule
-//  let currentFest: JSONNull?
+//  let currentFest: CurrentFest
   let currentPlayer: CurrentPlayer
   let vsStages: VsStages
 
@@ -53,7 +53,7 @@ struct BankaraSchedulesNode: Codable {
   let startTime: Date
   let endTime: Date
   let bankaraMatchSettings: [MatchSetting]?
-  let festMatchSettings: JSONNull?
+  let festMatchSettings: [FestMatchSetting]?
   let regularMatchSetting: MatchSetting?
   let xMatchSetting: MatchSetting?
 
@@ -75,6 +75,7 @@ struct MatchSetting: Codable {
   let vsRule: VsRule
   let bankaraMode: BankaraMode?
   let leagueMatchEvent: LeagueMatchEvent?
+  let festMode: String?
 
   enum CodingKeys: String, CodingKey {
     case isVsSetting = "__isVsSetting"
@@ -83,6 +84,7 @@ struct MatchSetting: Codable {
     case vsRule = "vsRule"
     case bankaraMode = "bankaraMode"
     case leagueMatchEvent = "leagueMatchEvent"
+    case festMode
   }
 }
 
@@ -93,6 +95,7 @@ enum BankaraMode: String, Codable {
 
 enum IsVsSetting: String, Codable {
   case bankaraMatchSetting = "BankaraMatchSetting"
+  case festMatchSetting = "FestMatchSetting"
   case leagueMatchSetting = "LeagueMatchSetting"
   case regularMatchSetting = "RegularMatchSetting"
   case xMatchSetting = "XMatchSetting"
@@ -180,6 +183,15 @@ struct UserIcon: Codable {
   }
 }
 
+// MARK: - FestMatchSetting
+struct FestMatchSetting: Codable {
+  let typename: IsVsSetting?
+
+  enum CodingKeys: String, CodingKey {
+    case typename = "__typename"
+  }
+}
+
 // MARK: - CoopGroupingSchedule
 struct CoopGroupingSchedule: Codable {
   let bannerImage: JSONNull?
@@ -260,6 +272,57 @@ struct Weapon: Codable {
   }
 }
 
+//// MARK: - CurrentFest
+//struct CurrentFest: Codable {
+//  let id: String
+//  let title: String
+//  let startTime: Date
+//  let endTime: Date
+//  let midtermTime: Date
+//  let state: String
+//  let teams: [Team]
+//  let tricolorStage: Stage
+//
+//  enum CodingKeys: String, CodingKey {
+//    case id
+//    case title
+//    case startTime
+//    case endTime
+//    case midtermTime
+//    case state
+//    case teams
+//    case tricolorStage
+//  }
+//}
+//
+//// MARK: - Team
+//struct Team: Codable {
+//  let id: String
+//  let color: TeamColor
+//  let myVoteState: JSONNull?
+//
+//  enum CodingKeys: String, CodingKey {
+//    case id
+//    case color
+//    case myVoteState
+//  }
+//}
+//
+//// MARK: - TeamColor
+//struct TeamColor: Codable {
+//  let colorA: Int?
+//  let colorB: Double
+//  let colorG: Double
+//  let colorR: Double
+//
+//  enum CodingKeys: String, CodingKey {
+//    case colorA = "a"
+//    case colorB = "b"
+//    case colorG = "g"
+//    case colorR = "r"
+//  }
+//}
+
 // MARK: - CurrentPlayer
 struct CurrentPlayer: Codable {
   let userIcon: UserIcon
@@ -300,6 +363,28 @@ struct TimePeriod: Codable {
   }
 }
 
+// MARK: - FestSchedules
+struct FestSchedules: Codable {
+  let nodes: [FestSchedulesNode]
+
+  enum CodingKeys: String, CodingKey {
+    case nodes
+  }
+}
+
+// MARK: - FestSchedulesNode
+struct FestSchedulesNode: Codable {
+  let startTime: Date
+  let festMatchSettings: [MatchSetting]?
+  let endTime: Date
+
+  enum CodingKeys: String, CodingKey {
+    case startTime
+    case festMatchSettings
+    case endTime
+  }
+}
+
 // MARK: - VsStages
 struct VsStages: Codable {
   let nodes: [VsStagesNode]
@@ -329,6 +414,7 @@ struct VsStagesNode: Codable {
 // MARK: - Encode/decode helpers
 
 class JSONNull: Codable, Hashable {
+
   public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
     return true
   }
@@ -346,9 +432,7 @@ class JSONNull: Codable, Hashable {
   public required init(from decoder: Decoder) throws {
     let container = try decoder.singleValueContainer()
     if !container.decodeNil() {
-      throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(
-        codingPath: decoder.codingPath,
-        debugDescription: "Wrong type for JSONNull"))
+      throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
     }
   }
 
