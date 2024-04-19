@@ -22,7 +22,7 @@ struct DataClass: Codable {
   let eventSchedules: EventSchedules
   let festSchedules: Schedules
   let coopGroupingSchedule: CoopGroupingSchedule
-  let currentFest: JSONNull?
+//  let currentFest: JSONNull?
   let currentPlayer: CurrentPlayer
   let vsStages: VsStages
 
@@ -33,7 +33,7 @@ struct DataClass: Codable {
     case eventSchedules
     case festSchedules
     case coopGroupingSchedule
-    case currentFest
+//    case currentFest
     case currentPlayer
     case vsStages
   }

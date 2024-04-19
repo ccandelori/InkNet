@@ -24,12 +24,15 @@ struct HangTabView: View {
         .padding(.horizontal, 5)
 
 
-      RoundedRectangle(cornerRadius: 50.0)
-        .frame(width: 70, height: 18)
-        .offset(y: 25)
-      Circle()
-        .frame(width: 18)
-        .offset(y: 16)
+      Group {
+        RoundedRectangle(cornerRadius: 50.0)
+          .frame(width: 70, height: 18)
+          .offset(y: 25)
+        Circle()
+          .frame(width: 18)
+          .offset(y: 16)
+      }
+      .foregroundColor(.black)
     }
   }
 }

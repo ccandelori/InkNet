@@ -16,63 +16,84 @@ struct RegularScheduleDetailView: View {
   var body: some View {
     NavigationStack {
       ZStack {
-        Color.black.opacity(0.7)
-          .ignoresSafeArea(.all)
-        ScrollView {
-          VStack(alignment: .leading, spacing: -4) {
-            if let turfWar = scheduleStore.getRegularSchedules() {
-              ForEach(turfWar, id: \.startTime) { schedule in
-                Text(scheduleStore.formatTime(from: schedule.startTime))
-                  .font(.custom("Splatoon1", size: 12.0))
-                  .padding(.horizontal)
-                  .background(Color("TurfWarGreen"))
-                  .clipShape(RoundedRectangle(cornerRadius: 25.0))
-
-                StageView(stages: schedule.regularMatchSetting!.vsStages) { url, name in
-                  self.selectedImageUrl = url
-                  self.selectedStageName = name
-                }
-              }
-            }
-          }
-          .padding(.horizontal)
-        }
-        .overlay(
-          Group {
-            if let url = selectedImageUrl, let name = selectedStageName {
-              FullImageView(url: url, stageName: name) {
-                self.selectedImageUrl = nil
-                self.selectedStageName = nil
-              }
-            }
-          }
-        )
-        .toolbar {
-          ToolbarItem(placement: .principal) {
-            HStack {
-              Image("regular")
-              ShadedSplatoon1Text(text: "Turf War", size: 24.0)
-            }
-          }
-          ToolbarItem(placement: .topBarTrailing) {
-            Button {
-              showReminderView = true
-            } label: {
-              Image(systemName: "bell")
-                .padding()
-                .foregroundColor(Color("TurfWarGreen"))
-            }
-            .sheet(isPresented: $showReminderView) {
-              ReminderView()
-            }
+        backgroundImageView
+        scrollViewContent
+        overlayView
+      }
+      .toolbar {
+        ToolbarItemGroup(placement: .principal) {
+          HStack {
+            Image("regular")
+            ShadedSplatoon1Text(text: "Turf War", size: 24.0)
           }
         }
-        .listStyle(.plain)
+        ToolbarItem(placement: .navigationBarTrailing) {
+          Button {
+            showReminderView = true
+          } label: {
+            Image("little-buddy")
+              .resizable()
+              .frame(width: 30, height: 34)
+              .padding()
+              .foregroundColor(Color("TurfWarGreen"))
+          }
+          .sheet(isPresented: $showReminderView) {
+            ReminderView()
+          }
+        }
+      }
+      .onAppear {
+        Task {
+          await scheduleStore.fetchScheduleDataIfNeeded()
+        }
       }
     }
-    .onAppear {
-      Task {
-        await scheduleStore.fetchScheduleDataIfNeeded()
+  }
+
+  private var backgroundImageView: some View {
+    Image("bg-light")
+      .resizable()
+      .ignoresSafeArea(.all)
+      .opacity(0.2)
+      .scaleEffect(CGSize(width: 2.33, height: 1.33))
+  }
+
+  private var scrollViewContent: some View {
+    ScrollView {
+      VStack(alignment: .leading, spacing: -4) {
+        if let turfWar = scheduleStore.getRegularSchedules() {
+          ForEach(turfWar, id: \.startTime) { schedule in
+            scheduleDetailView(for: schedule)
+          }
+        }
+      }
+      .padding(.horizontal)
+    }
+  }
+
+  private func scheduleDetailView(for schedule: BankaraSchedulesNode) -> some View {
+    VStack(alignment: .leading, spacing: 0) {
+      Text(scheduleStore.formatTime(from: schedule.startTime))
+        .font(.custom("Splatoon1", size: 12.0))
+        .padding(.horizontal)
+        .foregroundColor(.black)
+        .background(Color("TurfWarGreen"))
+        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+
+      StageView(stages: schedule.regularMatchSetting!.vsStages) { url, name in
+        self.selectedImageUrl = url
+        self.selectedStageName = name
+      }
+    }
+  }
+
+  private var overlayView: some View {
+    Group {
+      if let url = selectedImageUrl, let name = selectedStageName {
+        FullImageView(url: url, stageName: name) {
+          self.selectedImageUrl = nil
+          self.selectedStageName = nil
+        }
       }
     }
   }
