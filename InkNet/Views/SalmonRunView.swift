@@ -17,6 +17,7 @@ struct SalmonRunView: View {
       ZStack {
         backgroundImageView
         HangTabView(color: "AnarchyOrange", overlay: "monsters-transparent-bg")
+          .frame(height: 600)
         contentStack
           .overlay(fullImageViewOverlay)
       }
@@ -99,7 +100,7 @@ struct CurrentRunDetailsView: View {
           bossName: current.setting.boss.name,
           weapons: current.setting.weapons)
       }
-      NowLabel()
+      BorderedLabel(text: "Now")
     }
     .padding(.horizontal)
   }
@@ -122,7 +123,8 @@ struct UpcomingRunsDetailsView: View {
         }
       }
       .padding(.leading)
-      ComingUpLabel()
+      BorderedLabel(text: "Coming Up", width: 70)
+        .offset(x: 15, y: -10)
     }
   }
 }
@@ -161,39 +163,6 @@ struct UpcomingRunRow: View {
     }
     .padding([.horizontal, .top], 5)
     .frame(height: 80)
-  }
-}
-
-struct NowLabel: View {
-  var body: some View {
-    Text("Now")
-      .font(.custom("Splatoon2", size: 12.0))
-      .padding(.horizontal)
-      .background(Color("AccentPurple"))
-      .foregroundColor(.white)
-      .rotationEffect(.degrees(-15.0))
-      .overlay(Rectangle()
-        .stroke(lineWidth: 1.2)
-        .foregroundColor(.white)
-        .rotationEffect(.degrees(-15.0))
-        .frame(width: 40, height: 18))
-  }
-}
-
-struct ComingUpLabel: View {
-  var body: some View {
-    Text("Coming Up")
-      .font(.custom("Splatoon2", size: 12.0))
-      .padding(.horizontal)
-      .background(Color("AccentPurple"))
-      .foregroundColor(.white)
-      .rotationEffect(.degrees(-15.0))
-      .overlay(Rectangle()
-        .stroke(lineWidth: 1.2)
-        .foregroundColor(.white)
-        .rotationEffect(.degrees(-15.0))
-        .frame(width: 70, height: 18))
-      .offset(x: 15, y: -10)
   }
 }
 

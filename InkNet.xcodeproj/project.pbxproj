@@ -11,7 +11,10 @@
 		102B2F672BCA045400A11457 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F662BCA045400A11457 /* Constants.swift */; };
 		102B2F692BCA072E00A11457 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F682BCA072E00A11457 /* ScheduleView.swift */; };
 		102B2F6C2BCD930100A11457 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B2F6B2BCD930100A11457 /* ReminderView.swift */; };
+		1030F7682BD45A0A00CB9FCF /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030F7672BD45A0A00CB9FCF /* BorderedLabel.swift */; };
 		10540D092BD1D59100E02A84 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D082BD1D59100E02A84 /* EventScheduleView.swift */; };
+		10540D0B2BD3465600E02A84 /* GearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D0A2BD3465600E02A84 /* GearModel.swift */; };
+		10540D0D2BD3483800E02A84 /* GearStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D0C2BD3483800E02A84 /* GearStore.swift */; };
 		109AF5E42BCEF62600162E1E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109AF5E32BCEF62600162E1E /* NotificationManager.swift */; };
 		10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D02BC055D70029A850 /* InkNetApp.swift */; };
 		10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E3D22BC055D70029A850 /* ContentView.swift */; };
@@ -56,7 +59,10 @@
 		102B2F662BCA045400A11457 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		102B2F682BCA072E00A11457 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		102B2F6B2BCD930100A11457 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		1030F7672BD45A0A00CB9FCF /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
 		10540D082BD1D59100E02A84 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
+		10540D0A2BD3465600E02A84 /* GearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearModel.swift; sourceTree = "<group>"; };
+		10540D0C2BD3483800E02A84 /* GearStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearStore.swift; sourceTree = "<group>"; };
 		109AF5E32BCEF62600162E1E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		10C4E3CD2BC055D70029A850 /* InkNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InkNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C4E3D02BC055D70029A850 /* InkNetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkNetApp.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 				10C4E4152BC3305E0029A850 /* HangTabView.swift */,
 				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
 				10C4E4042BC05C760029A850 /* GearView.swift */,
+				1030F7672BD45A0A00CB9FCF /* BorderedLabel.swift */,
 				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
 			);
 			path = Views;
@@ -211,6 +218,8 @@
 				10C4E3FA2BC058210029A850 /* ScheduleModel.swift */,
 				10C4E3FC2BC058570029A850 /* ScheduleStore.swift */,
 				10C4E4122BC1B3F30029A850 /* SalmonRunModel.swift */,
+				10540D0A2BD3465600E02A84 /* GearModel.swift */,
+				10540D0C2BD3483800E02A84 /* GearStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +381,8 @@
 				10C4E4132BC1B3F30029A850 /* SalmonRunModel.swift in Sources */,
 				109AF5E42BCEF62600162E1E /* NotificationManager.swift in Sources */,
 				102B2F652BC881D900A11457 /* SplashScreenView.swift in Sources */,
+				1030F7682BD45A0A00CB9FCF /* BorderedLabel.swift in Sources */,
+				10540D0B2BD3465600E02A84 /* GearModel.swift in Sources */,
 				10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */,
 				10540D092BD1D59100E02A84 /* EventScheduleView.swift in Sources */,
 				10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */,
@@ -384,6 +395,7 @@
 				10C4E4162BC3305E0029A850 /* HangTabView.swift in Sources */,
 				10C4E3FB2BC058210029A850 /* ScheduleModel.swift in Sources */,
 				102B2F672BCA045400A11457 /* Constants.swift in Sources */,
+				10540D0D2BD3483800E02A84 /* GearStore.swift in Sources */,
 				10C4E3D32BC055D70029A850 /* ContentView.swift in Sources */,
 				102B2F6C2BCD930100A11457 /* ReminderView.swift in Sources */,
 				10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */,

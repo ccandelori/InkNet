@@ -151,7 +151,7 @@ struct ReminderView: View {
   func saveSelectedRegularStages() {
     UserDefaults.standard.set(Array(selectedRegularStages), forKey: "selectedRegularStages")
   }
-  
+
   func saveSelectedAnarchyStages() {
     UserDefaults.standard.set(Array(selectedAnarchyStages), forKey: "selectedAnarchyStages")
   }

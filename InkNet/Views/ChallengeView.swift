@@ -12,7 +12,6 @@ import SwiftUI
 struct ChallengeView: View {
   @StateObject var viewModel = ChallengeViewModel(scheduleStore: ScheduleStore.shared)
 
-
   var body: some View {
     NavigationStack {
       ZStack {
@@ -33,7 +32,6 @@ struct ChallengeView: View {
 }
 
 // MARK: - BackgroundImageView
-
 struct BackgroundImageView: View {
   var body: some View {
     Image("bg-light")
@@ -45,7 +43,6 @@ struct BackgroundImageView: View {
 }
 
 // MARK: - ChallengeContentView
-
 struct ChallengeContentView: View {
   var challenges: [ChallengeType: [EventSchedulesNode]]
 
@@ -61,7 +58,6 @@ struct ChallengeContentView: View {
 }
 
 // MARK: - ChallengeStack
-
 struct ChallengeStack: View {
   var challenges: [EventSchedulesNode]
 

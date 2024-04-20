@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - ScheduleData
 struct ScheduleData: Codable {
-  let data: DataClass
+  let data: ScheduleDataClass
 
   enum CodingKeys: String, CodingKey {
     case data
@@ -15,7 +15,7 @@ struct ScheduleData: Codable {
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct ScheduleDataClass: Codable {
   let regularSchedules: Schedules
   let bankaraSchedules: Schedules
   let xSchedules: Schedules

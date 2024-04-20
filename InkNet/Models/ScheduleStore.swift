@@ -15,7 +15,6 @@ class ScheduleStore: ObservableObject {
   private let scheduleCacheKey = "scheduleCache"
   private let cacheExpirationKey = "cacheExpiration"
   private let scheduleURL = "https://splatoon3.ink/data/schedules.json"
-  private let gearURL = "https://splatoon3.ink/data/gear.json"
   private let coopURL = "https://splatoon3.ink/data/coop.json"
   private let splatfestURL = "https://splatoon3.ink/data/festivals.json"
 

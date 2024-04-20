@@ -17,7 +17,7 @@ struct HangTabView: View {
         .resizable()
         .aspectRatio(contentMode: .fit)
         .rotationEffect(.degrees(90))
-        .frame(maxWidth: .infinity, maxHeight: 600)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .scaleEffect(1.7)
         .background(Color(color))
         .clipShape(RoundedRectangle(cornerRadius: Dimensions.cornerRadius.rawValue))
