@@ -66,7 +66,7 @@ struct SalmonRunView: View {
   }
 
   private func upcomingRunsView(coop: [PurpleNode]) -> some View {
-    UpcomingRunsDetailsView(coop: coop) { stage in
+    UpcomingRunsDetailsView(coop: coop, scheduleStore: scheduleStore) { stage in
       self.selectedImageUrl = URL(string: stage.setting.coopStage.image.url)
       self.selectedStageName = stage.setting.coopStage.name
     }
@@ -108,6 +108,7 @@ struct CurrentRunDetailsView: View {
 
 struct UpcomingRunsDetailsView: View {
   let coop: [PurpleNode]
+  var scheduleStore: ScheduleStore
   var onTap: (PurpleNode) -> Void
 
   var body: some View {
@@ -119,7 +120,7 @@ struct UpcomingRunsDetailsView: View {
         .opacity(0.4)
       VStack(alignment: .leading) {
         ForEach(coop, id: \.startTime) { upcoming in
-          UpcomingRunRow(upcoming: upcoming) { onTap(upcoming) }
+          UpcomingRunRow(upcoming: upcoming, formatDate: scheduleStore.formatDateTime) { onTap(upcoming) }
         }
       }
       .padding(.leading)
@@ -131,6 +132,7 @@ struct UpcomingRunsDetailsView: View {
 
 struct UpcomingRunRow: View {
   let upcoming: PurpleNode
+  var formatDate: (Date) -> String
   var onTap: () -> Void
 
   var body: some View {
@@ -144,7 +146,7 @@ struct UpcomingRunRow: View {
 
       VStack {
         ShadedSplatoon2Text(
-          text: "\(upcoming.startTime.formatted()) - \(upcoming.endTime.formatted())",
+          text: "\(formatDate(upcoming.startTime)) - \(formatDate(upcoming.endTime))",
           size: 12.0)
         HStack(spacing: 18) {
           ForEach(upcoming.setting.weapons, id: \.name) { weapon in

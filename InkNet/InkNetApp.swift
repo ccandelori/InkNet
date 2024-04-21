@@ -11,6 +11,7 @@ import SwiftUI
 struct InkNetApp: App {
   @StateObject var scheduleStore = ScheduleStore()
   @StateObject var notificationManager = NotificationManager(scheduleStore: ScheduleStore())
+  @State private var isSplashScreenActive = true
 
   init() {
     let store = ScheduleStore()
@@ -20,15 +21,19 @@ struct InkNetApp: App {
 
   var body: some Scene {
     WindowGroup {
-      ContentView()
-        .environmentObject(scheduleStore)
-        .environmentObject(notificationManager)
-        .onAppear {
-          Task {
-            let granted = try await notificationManager.requestAuthorization()
-            print("Notifications granted: \(granted)")
+      if isSplashScreenActive {
+        SplashScreenView(isPresented: $isSplashScreenActive)
+      } else {
+        MainAppView()
+          .environmentObject(scheduleStore)
+          .environmentObject(notificationManager)
+          .onAppear {
+            Task {
+              let granted = try await notificationManager.requestAuthorization()
+              print("Notifications granted: \(granted)")
+            }
           }
-        }
+      }
     }
   }
 }

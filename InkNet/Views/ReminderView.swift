@@ -9,165 +9,123 @@ import SwiftUI
 
 struct ReminderView: View {
   @EnvironmentObject var scheduleStore: ScheduleStore
-  @State private var anarchyModeEnabled = false
+  @Environment(\.presentationMode)
+  var presentationMode
+  @State private var anarchyEnabled = false
   @State private var selectedRegularStages = Set<String>()
   @State private var selectedAnarchyStages = Set<String>()
   @State private var regularStageEnabled = false
   @State private var anarchyStageEnabled = false
+  @State private var anarchyModeEnabled = false
 
   var body: some View {
     NavigationView {
       Form {
-        Section {
-          HStack {
-            Spacer()
-            Text("Add Reminder")
-              .font(.custom("Splatoon2", size: 28.0))
-            //            Spacer()
-            Button("Save") {
-              saveSelectedRegularStages()
-              saveSelectedAnarchyStages()
-            }
-            .padding()
+        Section(header: headerView) {
+          if regularStageEnabled {
+            stageSelectionGrid(stages: scheduleStore.getStages(), selectedStages: $selectedRegularStages, highlightColor: "TurfWarGreen")
           }
-          VStack {
-            VStack {
-              Text("Turf War")
-                .font(.custom("Splatoon2", size: 18.0))
-              Toggle(isOn: $regularStageEnabled) {
-                Text("Stage")
-                  .font(.custom("Splatoon2", size: 18.0))
-              }
-              if regularStageEnabled {
-                let columns = [GridItem(.flexible()), GridItem(.flexible())]
-                LazyVGrid(columns: columns, spacing: 0) {
-                  if let stages = scheduleStore.getStages() {
-                    ForEach(stages, id: \.vsStageID) { stage in
-                      ZStack(alignment: .bottom) {
-                        AsyncImage(url: URL(string: stage.originalImage.url)) { image in
-                          image
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 12.0))
-                            .border(selectedRegularStages.contains(stage.name) ? Color("TurfWarGreen") : Color.clear, width: 5)
-                        } placeholder: {
-                          Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                        }
-                        Text(stage.name)
-                          .font(.custom("Splatoon2", size: 9.0))
-                          .foregroundColor(.white)
-                          .padding(.horizontal, 4)
-                          .background(.black)
-                          .alignmentGuide(.bottom) { _ in 10 }
-                      }
-                      .frame(height: 125)
-                      .onTapGesture {
-                        toggleRegularStageSelection(stage: stage.name)
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            VStack {
-              Text("Anarchy Battle")
-                .font(.custom("Splatoon2", size: 18.0))
-              Toggle(isOn: $anarchyModeEnabled) {
-                Text("Game Mode")
-                  .font(.custom("Splatoon2", size: 18.0))
-              }
-              Toggle(isOn: $anarchyStageEnabled) {
-                Text("Stage")
-                  .font(.custom("Splatoon2", size: 18.0))
-              }
-              if anarchyStageEnabled {
-                let columns = [GridItem(.flexible()), GridItem(.flexible())]
-                LazyVGrid(columns: columns, spacing: 0) {
-                  if let stages = scheduleStore.getStages() {
-                    ForEach(stages, id: \.vsStageID) { stage in
-                      ZStack(alignment: .bottom) {
-                        // TODO: Store the stage images on the device and use a normal Image object
-                        AsyncImage(url: URL(string: stage.originalImage.url)) { image in
-                          image
-                            .resizable()
-                            .scaledToFit()
-                            .clipShape(RoundedRectangle(cornerRadius: 12.0))
-                            .border(selectedAnarchyStages.contains(stage.name) ? Color("AnarchyOrange") : Color.clear, width: 5)
-                        } placeholder: {
-                          Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                        }
-                        Text(stage.name)
-                          .font(.custom("Splatoon2", size: 9.0))
-                          .foregroundColor(.white)
-                          .padding(.horizontal, 4)
-                          .background(.black)
-                          .alignmentGuide(.bottom) { _ in 10 }
-                      }
-                      .frame(height: 125)
-                      .onTapGesture {
-                        toggleAnarchyStageSelection(stage: stage.name)
-                      }
-                    }
-                  }
-                }
-              }
+          if anarchyEnabled {
+            Toggle("Mode", isOn: $anarchyModeEnabled)
+              .font(.custom("Splatoon2", size: 18.0))
+            Toggle("Stage", isOn: $anarchyStageEnabled)
+              .font(.custom("Splatoon2", size: 18.0))
+            if anarchyStageEnabled {
+              stageSelectionGrid(stages: scheduleStore.getStages(), selectedStages: $selectedAnarchyStages, highlightColor: "AnarchyOrange")
             }
           }
         }
       }
-    }
-    .onAppear {
-      loadSelectedRegularStages()
-      loadSelectedAnarchyStages()
-      regularStageEnabled = UserDefaults.standard.array(forKey: "selectedRegularStages") as? [String] != nil
-      anarchyStageEnabled = UserDefaults.standard.array(forKey: "selectedAnarchyStages") as? [String] != nil
-    }
-  }
-
-  func toggleRegularStageSelection(stage: String) {
-    if selectedRegularStages.contains(stage) {
-      selectedRegularStages.remove(stage)
-    } else {
-      selectedRegularStages.insert(stage)
+      .toolbar {
+        ToolbarItem(placement: .principal) {
+          Text("Add Reminder")
+            .font(.custom("Splatoon2", size: 28.0))
+            .foregroundColor(.primary)
+        }
+      }
+      .navigationBarItems(trailing: Button("Save", action: savePreferencesAndDismiss))
+      .onAppear(perform: loadPreferences)
     }
   }
 
-  func toggleAnarchyStageSelection(stage: String) {
-    if selectedAnarchyStages.contains(stage) {
-      selectedAnarchyStages.remove(stage)
-    } else {
-      selectedAnarchyStages.insert(stage)
+  private var headerView: some View {
+    VStack {
+      HStack {
+        Text("Turf War")
+          .font(.custom("Splatoon2", size: 18.0))
+        Toggle("Stage", isOn: $regularStageEnabled)
+          .font(.custom("Splatoon2", size: 18.0))
+      }
+      HStack {
+        Text("Anarchy Battle")
+          .font(.custom("Splatoon2", size: 18.0))
+        Toggle("", isOn: $anarchyEnabled)
+          .font(.custom("Splatoon2", size: 18.0))
+      }
     }
   }
 
-  func updatePreferences(for mode: String, isEnabled: Bool) {
-    let key = (mode == "regular") ? "selectedRegularStages" : "selectedAnarchyStages"
+  private func stageSelectionGrid(stages: [VsStagesNode]?, selectedStages: Binding<Set<String>>, highlightColor: String) -> some View {
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    return LazyVGrid(columns: columns, spacing: 0) {
+      ForEach(stages ?? [], id: \.vsStageID) { stage in
+        StageImageView(stage: stage, selectedStages: selectedStages, highlightColor: Color(highlightColor))
+      }
+    }
   }
 
-  func saveSelectedRegularStages() {
+  private func savePreferencesAndDismiss() {
+    savePreferences()
+    presentationMode.wrappedValue.dismiss()
+  }
+
+  private func savePreferences() {
     UserDefaults.standard.set(Array(selectedRegularStages), forKey: "selectedRegularStages")
-  }
-
-  func saveSelectedAnarchyStages() {
     UserDefaults.standard.set(Array(selectedAnarchyStages), forKey: "selectedAnarchyStages")
   }
 
-  func loadSelectedRegularStages() {
-    if let stages = UserDefaults.standard.array(forKey: "selectedRegularStages") as? [String] {
-      selectedRegularStages = Set(stages)
-    }
+  private func loadPreferences() {
+    selectedRegularStages = Set(UserDefaults.standard.array(forKey: "selectedRegularStages") as? [String] ?? [])
+    selectedAnarchyStages = Set(UserDefaults.standard.array(forKey: "selectedAnarchyStages") as? [String] ?? [])
+    regularStageEnabled = !selectedRegularStages.isEmpty
+    anarchyStageEnabled = !selectedAnarchyStages.isEmpty
   }
+}
 
-  func loadSelectedAnarchyStages() {
-    if let stages = UserDefaults.standard.array(forKey: "selectedAnarchyStages") as? [String] {
-      selectedAnarchyStages = Set(stages)
+struct StageImageView: View {
+  let stage: VsStagesNode
+  @Binding var selectedStages: Set<String>
+  let highlightColor: Color
+
+  var body: some View {
+    ZStack(alignment: .bottom) {
+      AsyncImage(url: URL(string: stage.originalImage.url)) { image in
+        image
+          .resizable()
+          .scaledToFit()
+          .clipShape(RoundedRectangle(cornerRadius: 12.0))
+          .border(selectedStages.contains(stage.name) ? highlightColor : Color.clear, width: 5)
+      } placeholder: {
+        Image(systemName: "photo").resizable().scaledToFit()
+      }
+      Text(stage.name)
+        .font(.custom("Splatoon2", size: 9.0))
+        .foregroundColor(.white)
+        .padding(.horizontal, 4)
+        .background(.black)
+        .alignmentGuide(.bottom) { _ in 10 }
+    }
+    .frame(height: 125)
+    .onTapGesture {
+      if selectedStages.contains(stage.name) {
+        selectedStages.remove(stage.name)
+      } else {
+        selectedStages.insert(stage.name)
+      }
     }
   }
 }
+
 
 #Preview {
   ReminderView()

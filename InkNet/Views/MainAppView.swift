@@ -15,7 +15,7 @@ enum TabSelection {
   case splatfest
 }
 
-struct ContentView: View {
+struct MainAppView: View {
   @State var currentTab: TabSelection = .schedule
 
   var body: some View {
@@ -40,6 +40,6 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView()
+  MainAppView()
     .environmentObject(ScheduleStore())
 }
