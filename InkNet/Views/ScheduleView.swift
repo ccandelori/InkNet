@@ -17,16 +17,16 @@ struct ScheduleView: View {
           NavigationLink(destination: RegularScheduleDetailView()) {
             ModeCardView(mode: "Regular", imageName: "regular", color: "TurfWarGreen")
           }
-          NavigationLink(destination: RegularScheduleDetailView()) {
+          NavigationLink(destination: AnarchyScheduleDetailView()) {
             ModeCardView(mode: "Anarchy", imageName: "bankara", color: "AnarchyOrange")
           }
         }
         .padding()
         HStack {
-          NavigationLink(destination: RegularScheduleDetailView()) {
+          NavigationLink(destination: ChallengeView()) {
             ModeCardView(mode: "Challenge", imageName: "event", color: "ChallengeMagenta")
           }
-          NavigationLink(destination: RegularScheduleDetailView()) {
+          NavigationLink(destination: XScheduleDetailView()) {
             ModeCardView(mode: "X Rank", imageName: "x", color: "XRankTeal")
           }
         }

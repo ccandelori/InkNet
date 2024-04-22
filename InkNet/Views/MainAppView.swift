@@ -30,11 +30,11 @@ struct MainAppView: View {
         .tabItem { Label("Challenge", image: "event") }
         .tag(TabSelection.challenge)
       GearView()
-        .tabItem { Label("Gear", image: "carbon_roller_40px") }
+        .tabItem { Label("Gear", image: "toni-kensa-40px") }
         .tag(TabSelection.gear)
-      SplatFestView()
-        .tabItem { Label("Splatfest", systemImage: "") }
-        .tag(TabSelection.splatfest)
+//      SplatFestView()
+//        .tabItem { Label("Splatfest", systemImage: "") }
+//        .tag(TabSelection.splatfest)
     }
   }
 }
