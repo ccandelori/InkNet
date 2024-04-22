@@ -67,23 +67,32 @@ struct AnarchyScheduleDetailView: View {
 
   private func scheduleDetailView(for schedule: BankaraSchedulesNode) -> some View {
     VStack(alignment: .leading, spacing: 0) {
-      Text(scheduleStore.formatTime(from: schedule.startTime))
-        .font(.custom("Splatoon1", size: 12.0))
+      ShadedSplatoon1Text(text: scheduleStore.formatTime(from: schedule.startTime), size: 12.0)
         .padding(.horizontal)
-        .foregroundColor(.black)
         .background(Color("AnarchyOrange"))
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
 
-      // Check if there are match settings and iterate over each to create a StageView for each match setting
       if let matchSettings = schedule.bankaraMatchSettings, !matchSettings.isEmpty {
         ForEach(matchSettings, id: \.bankaraMode) { setting in
-          StageView(stages: setting.vsStages) { url, name in
-            self.selectedImageUrl = url
-            self.selectedStageName = name
+          VStack(alignment: .leading, spacing: 0) {
+            HStack {
+              Image(setting.vsRule.rule.rawValue.lowercased())
+                .scaleEffect(0.8)
+              ShadedSplatoon1Text(text: setting.vsRule.name.rawValue, size: 20.0)
+              ShadedSplatoon2Text(text: setting.bankaraMode!.rawValue, size: 14.0)
+                .padding(.horizontal)
+                .background(Color("AccentPurple"))
+                .foregroundColor(.white)
+                .rotationEffect(.degrees(0))
+            }
+            StageView(stages: setting.vsStages) { url, name in
+              self.selectedImageUrl = url
+              self.selectedStageName = name
+            }
           }
         }
       } else {
-        Text("No match settings available")
+        Text("No match information available")
           .padding()
           .foregroundColor(.gray)
       }

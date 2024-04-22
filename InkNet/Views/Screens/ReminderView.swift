@@ -23,7 +23,10 @@ struct ReminderView: View {
       Form {
         Section(header: headerView) {
           if regularStageEnabled {
-            stageSelectionGrid(stages: scheduleStore.getStages(), selectedStages: $selectedRegularStages, highlightColor: "TurfWarGreen")
+            stageSelectionGrid(
+              stages: scheduleStore.getStages(),
+              selectedStages: $selectedRegularStages,
+              highlightColor: "TurfWarGreen")
           }
           if anarchyEnabled {
             Toggle("Mode", isOn: $anarchyModeEnabled)
@@ -31,7 +34,10 @@ struct ReminderView: View {
             Toggle("Stage", isOn: $anarchyStageEnabled)
               .font(.custom("Splatoon2", size: 18.0))
             if anarchyStageEnabled {
-              stageSelectionGrid(stages: scheduleStore.getStages(), selectedStages: $selectedAnarchyStages, highlightColor: "AnarchyOrange")
+              stageSelectionGrid(
+                stages: scheduleStore.getStages(),
+                selectedStages: $selectedAnarchyStages,
+                highlightColor: "AnarchyOrange")
             }
           }
         }

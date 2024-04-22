@@ -23,28 +23,21 @@ class NotificationManager: ObservableObject {
       }
   }
 
-  // Process new schedule data
   private func processScheduleData(_ scheduleData: ScheduleData?) {
     guard let data = scheduleData else { return }
     scheduleNotificationsForPreferredStages(scheduleData: data)
   }
 
-  // Requests authorization for notifications
   func requestAuthorization() async throws -> Bool {
     return try await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge])
   }
 
-  // Setup notifications based on user's preferences and schedule data
   func scheduleNotificationsForPreferredStages(scheduleData: ScheduleData) {
-    // Fetch user's preferred stages from UserDefaults
     let selectedStages = UserDefaults.standard.array(forKey: "selectedRegularStages") as? [String] ?? []
 
-    // Iterate over each node in the regular schedules
     for scheduleNode in scheduleData.data.regularSchedules.nodes {
-      // Check if the regularMatchSetting contains any of the user's preferred stages
       if let matchSetting = scheduleNode.regularMatchSetting,
          let vsStages = matchSetting.vsStages.first(where: { vsStage in selectedStages.contains(vsStage.name) }) {
-        // If a preferred stage is found, schedule the notifications
         scheduleNotification(stageName: vsStages.name, startTime: scheduleNode.startTime, type: "reminder")
         scheduleNotification(stageName: vsStages.name, startTime: scheduleNode.startTime, type: "start")
       }
@@ -54,13 +47,13 @@ class NotificationManager: ObservableObject {
   func scheduleNotification(stageName: String, startTime: Date, type: String) {
     let content = UNMutableNotificationContent()
     content.title = "Upcoming Match!"
-    content.body = "Your preferred stage \(stageName) is about to start."
+    content.body = "\(stageName) is in the current rotation!"
     content.sound = UNNotificationSound.default
 
     var notificationTime = startTime
     if type == "reminder" {
       notificationTime = Calendar.current.date(byAdding: .minute, value: -15, to: startTime) ?? startTime
-      content.body = "Your preferred stage \(stageName) will start in 15 minutes."
+      content.body = "\(stageName) will be in the next rotation, starting in 15 minutes!"
     }
 
     let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: notificationTime)
@@ -73,5 +66,4 @@ class NotificationManager: ObservableObject {
       }
     }
   }
-
 }

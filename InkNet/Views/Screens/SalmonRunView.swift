@@ -231,38 +231,6 @@ struct StageParameters: View {
   }
 }
 
-struct ShadedSplatoon1Text: View {
-  let text: String
-  let size: CGFloat
-
-  var body: some View {
-    ZStack {
-      Text(text)
-        .foregroundColor(.black)
-        .offset(x: 2, y: 2)
-      Text(text)
-        .foregroundColor(.white)
-    }
-    .font(.custom("Splatoon1", size: size))
-  }
-}
-
-struct ShadedSplatoon2Text: View {
-  let text: String
-  let size: CGFloat
-
-  var body: some View {
-    ZStack {
-      Text(text)
-        .foregroundColor(.black)
-        .offset(x: 2, y: 2)
-      Text(text)
-        .foregroundColor(.white)
-    }
-    .font(.custom("Splatoon2", size: size))
-  }
-}
-
 #Preview {
   SalmonRunView()
     .environmentObject(ScheduleStore())

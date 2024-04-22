@@ -16,6 +16,18 @@ class GearStore: ObservableObject {
   private let cacheKey = "gearCache"
   private let cacheExpirationKey = "gearCacheExpiration"
 
+  var nextHourDate: Date {
+    let calendar = Calendar.current
+    let now = Date()
+    var components = calendar.dateComponents([.year, .month, .day, .hour], from: now)
+
+    components.hour! += 1
+    components.minute = 0
+    components.second = 0
+
+    return calendar.date(from: components) ?? now
+  }
+
   func fetchGearDataIfNeeded() async {
     guard let url = URL(string: gearURL) else {
       print("Invalid URL")
@@ -25,8 +37,6 @@ class GearStore: ObservableObject {
     isLoading = true
     do {
       let (data, _) = try await URLSession.shared.data(from: url)
-//      print(String(decoding: data, as: UTF8.self))  // Print raw JSON data
-
       let decoder = JSONDecoder()
       decoder.dateDecodingStrategy = .custom { decoder in
         let container = try decoder.singleValueContainer()
@@ -45,8 +55,7 @@ class GearStore: ObservableObject {
     isLoading = false
   }
 
-//  private 
-  func fetchGearData() async {
+  private func fetchGearData() async {
     isLoading = true
     guard let url = URL(string: gearURL) else {
       isLoading = false
@@ -58,7 +67,6 @@ class GearStore: ObservableObject {
       decoder.dateDecodingStrategy = .iso8601
       let (data, response) = try await URLSession.shared.data(from: url)
 
-      // Check for HTTP response errors or status codes here.
       if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
         print("HTTP Error: Status code \(httpResponse.statusCode)")
         print("HTTP Response: \(httpResponse)")

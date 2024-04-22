@@ -16,7 +16,8 @@
 		1030F76E2BD5720A00CB9FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1030F76D2BD5720A00CB9FCF /* Assets.xcassets */; };
 		1030F7702BD5BE2700CB9FCF /* AnarchyScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030F76F2BD5BE2700CB9FCF /* AnarchyScheduleDetailView.swift */; };
 		1030F7722BD5E48300CB9FCF /* XScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030F7712BD5E48300CB9FCF /* XScheduleDetailView.swift */; };
-		10540D092BD1D59100E02A84 /* EventScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D082BD1D59100E02A84 /* EventScheduleView.swift */; };
+		1030F7742BD69F7600CB9FCF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030F7732BD69F7600CB9FCF /* OnboardingView.swift */; };
+		1030F7762BD6C23B00CB9FCF /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1030F7752BD6C23B00CB9FCF /* TextViews.swift */; };
 		10540D0B2BD3465600E02A84 /* GearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D0A2BD3465600E02A84 /* GearModel.swift */; };
 		10540D0D2BD3483800E02A84 /* GearStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10540D0C2BD3483800E02A84 /* GearStore.swift */; };
 		109AF5E42BCEF62600162E1E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109AF5E32BCEF62600162E1E /* NotificationManager.swift */; };
@@ -67,7 +68,8 @@
 		1030F76D2BD5720A00CB9FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1030F76F2BD5BE2700CB9FCF /* AnarchyScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnarchyScheduleDetailView.swift; sourceTree = "<group>"; };
 		1030F7712BD5E48300CB9FCF /* XScheduleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XScheduleDetailView.swift; sourceTree = "<group>"; };
-		10540D082BD1D59100E02A84 /* EventScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventScheduleView.swift; sourceTree = "<group>"; };
+		1030F7732BD69F7600CB9FCF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		1030F7752BD6C23B00CB9FCF /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		10540D0A2BD3465600E02A84 /* GearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearModel.swift; sourceTree = "<group>"; };
 		10540D0C2BD3483800E02A84 /* GearStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearStore.swift; sourceTree = "<group>"; };
 		109AF5E32BCEF62600162E1E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -120,6 +122,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1030F7772BD6C25600CB9FCF /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				1030F7752BD6C23B00CB9FCF /* TextViews.swift */,
+				10C4E4152BC3305E0029A850 /* HangTabView.swift */,
+				1030F7672BD45A0A00CB9FCF /* BorderedLabel.swift */,
+				10C4E40F2BC09BF30029A850 /* StageView.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		1030F7782BD6C27700CB9FCF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				102B2F682BCA072E00A11457 /* ScheduleView.swift */,
+				10C4E3FE2BC05C4F0029A850 /* RegularScheduleDetailView.swift */,
+				1030F76F2BD5BE2700CB9FCF /* AnarchyScheduleDetailView.swift */,
+				1030F7712BD5E48300CB9FCF /* XScheduleDetailView.swift */,
+				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
+				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
+				10C4E4042BC05C760029A850 /* GearView.swift */,
+				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
+				1030F7732BD69F7600CB9FCF /* OnboardingView.swift */,
+				102B2F642BC881D900A11457 /* SplashScreenView.swift */,
+				102B2F6B2BCD930100A11457 /* ReminderView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		109AF5E22BCEF61600162E1E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +183,8 @@
 		10C4E3CF2BC055D70029A850 /* InkNet */ = {
 			isa = PBXGroup;
 			children = (
+				10C4E3D02BC055D70029A850 /* InkNetApp.swift */,
+				10C4E3D22BC055D70029A850 /* MainAppView.swift */,
 				109AF5E22BCEF61600162E1E /* Utility */,
 				10C4E4112BC1B0C60029A850 /* Models */,
 				10C4E40E2BC09BA20029A850 /* Views */,
@@ -159,7 +192,6 @@
 				1030F76D2BD5720A00CB9FCF /* Assets.xcassets */,
 				1030F76B2BD56BEC00CB9FCF /* Launch Screen.storyboard */,
 				10C4E40C2BC060BF0029A850 /* CustomFonts */,
-				10C4E3D02BC055D70029A850 /* InkNetApp.swift */,
 				10C4E3D62BC055D90029A850 /* Preview Content */,
 			);
 			path = InkNet;
@@ -202,21 +234,8 @@
 		10C4E40E2BC09BA20029A850 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				10C4E3D22BC055D70029A850 /* MainAppView.swift */,
-				102B2F642BC881D900A11457 /* SplashScreenView.swift */,
-				102B2F682BCA072E00A11457 /* ScheduleView.swift */,
-				10C4E3FE2BC05C4F0029A850 /* RegularScheduleDetailView.swift */,
-				1030F76F2BD5BE2700CB9FCF /* AnarchyScheduleDetailView.swift */,
-				1030F7712BD5E48300CB9FCF /* XScheduleDetailView.swift */,
-				10540D082BD1D59100E02A84 /* EventScheduleView.swift */,
-				102B2F6B2BCD930100A11457 /* ReminderView.swift */,
-				10C4E40F2BC09BF30029A850 /* StageView.swift */,
-				10C4E4002BC05C5F0029A850 /* SalmonRunView.swift */,
-				10C4E4152BC3305E0029A850 /* HangTabView.swift */,
-				10C4E4022BC05C6B0029A850 /* ChallengeView.swift */,
-				10C4E4042BC05C760029A850 /* GearView.swift */,
-				1030F7672BD45A0A00CB9FCF /* BorderedLabel.swift */,
-				10C4E4062BC05C810029A850 /* SplatFestView.swift */,
+				1030F7782BD6C27700CB9FCF /* Screens */,
+				1030F7772BD6C25600CB9FCF /* Misc */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,8 +412,8 @@
 				102B2F652BC881D900A11457 /* SplashScreenView.swift in Sources */,
 				1030F7682BD45A0A00CB9FCF /* BorderedLabel.swift in Sources */,
 				10540D0B2BD3465600E02A84 /* GearModel.swift in Sources */,
+				1030F7762BD6C23B00CB9FCF /* TextViews.swift in Sources */,
 				10C4E4072BC05C810029A850 /* SplatFestView.swift in Sources */,
-				10540D092BD1D59100E02A84 /* EventScheduleView.swift in Sources */,
 				1030F7702BD5BE2700CB9FCF /* AnarchyScheduleDetailView.swift in Sources */,
 				10C4E4012BC05C5F0029A850 /* SalmonRunView.swift in Sources */,
 				10C4E3FF2BC05C4F0029A850 /* RegularScheduleDetailView.swift in Sources */,
@@ -409,6 +428,7 @@
 				10540D0D2BD3483800E02A84 /* GearStore.swift in Sources */,
 				10C4E3D32BC055D70029A850 /* MainAppView.swift in Sources */,
 				1030F7722BD5E48300CB9FCF /* XScheduleDetailView.swift in Sources */,
+				1030F7742BD69F7600CB9FCF /* OnboardingView.swift in Sources */,
 				102B2F6C2BCD930100A11457 /* ReminderView.swift in Sources */,
 				10C4E3D12BC055D70029A850 /* InkNetApp.swift in Sources */,
 			);

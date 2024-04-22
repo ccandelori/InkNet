@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct InkNetApp: App {
+  @AppStorage("hasOnboarded") var hasOnboarded = false
   @StateObject var scheduleStore = ScheduleStore()
   @StateObject var notificationManager = NotificationManager(scheduleStore: ScheduleStore())
   @State private var isSplashScreenActive = true
@@ -24,15 +25,19 @@ struct InkNetApp: App {
       if isSplashScreenActive {
         SplashScreenView(isPresented: $isSplashScreenActive)
       } else {
-        MainAppView()
-          .environmentObject(scheduleStore)
-          .environmentObject(notificationManager)
-          .onAppear {
-            Task {
-              let granted = try await notificationManager.requestAuthorization()
-              print("Notifications granted: \(granted)")
+        if hasOnboarded {
+          MainAppView()
+            .environmentObject(scheduleStore)
+            .environmentObject(notificationManager)
+            .onAppear {
+              Task {
+                let granted = try await notificationManager.requestAuthorization()
+                print("Notifications granted: \(granted)")
+              }
             }
-          }
+        } else {
+          OnboardingView(hasOnboarded: $hasOnboarded)
+        }
       }
     }
   }

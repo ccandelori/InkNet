@@ -79,9 +79,16 @@ struct XScheduleDetailView: View {
         .clipShape(RoundedRectangle(cornerRadius: 25.0))
 
       if let xMatchSetting = schedule.xMatchSetting {
-        StageView(stages: xMatchSetting.vsStages) { url, name in
-          self.selectedImageUrl = url
-          self.selectedStageName = name
+        VStack(alignment: .leading, spacing: 0) {
+          HStack {
+            Image(xMatchSetting.vsRule.rule.rawValue.lowercased())
+              .scaleEffect(0.8)
+            ShadedSplatoon1Text(text: xMatchSetting.vsRule.name.rawValue, size: 20.0)
+          }
+          StageView(stages: xMatchSetting.vsStages) { url, name in
+            self.selectedImageUrl = url
+            self.selectedStageName = name
+          }
         }
       } else {
         Text("Details unavailable")

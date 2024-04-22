@@ -8,7 +8,7 @@
 import Foundation
 
 enum Icons: String {
-  case regular = "regular"
+  case regular
 }
 
 enum Dimensions: CGFloat {
