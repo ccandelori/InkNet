@@ -81,6 +81,7 @@ struct RegularScheduleDetailView: View {
           self.selectedImageUrl = url
           self.selectedStageName = name
         }
+        .shadow(radius: 5)
       } else {
         // Provide an alternative view or handling if `vsStages` is nil
         Text("No stages available")

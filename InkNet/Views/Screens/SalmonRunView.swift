@@ -16,11 +16,14 @@ struct SalmonRunView: View {
     NavigationStack {
       ZStack {
         backgroundImageView
-        HangTabView(color: "AnarchyOrange", overlay: "monsters-transparent-bg")
-          .frame(height: 600)
-        contentStack
-          .overlay(fullImageViewOverlay)
+        ZStack {
+          HangTabView(color: "AnarchyOrange", overlay: "monsters-transparent-bg")
+            .frame(height: 600)
+          contentStack
+            .overlay(fullImageViewOverlay)
+        }
       }
+      .shadow(radius: 5)
     }
     .onAppear {
       Task {

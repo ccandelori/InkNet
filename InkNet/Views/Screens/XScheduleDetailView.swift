@@ -89,6 +89,7 @@ struct XScheduleDetailView: View {
             self.selectedImageUrl = url
             self.selectedStageName = name
           }
+          .shadow(radius: 5)
         }
       } else {
         Text("Details unavailable")

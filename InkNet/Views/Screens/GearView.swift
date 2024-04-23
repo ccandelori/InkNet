@@ -54,6 +54,7 @@ struct GearView: View {
   private var backgroundView: some View {
     HangTabView(color: "Burple", overlay: "circles-transparent")
       .frame(height: 650)
+      .shadow(radius: 5)
   }
 
   private var content: some View {

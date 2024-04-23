@@ -16,22 +16,27 @@ struct ScheduleView: View {
         HStack {
           NavigationLink(destination: RegularScheduleDetailView()) {
             ModeCardView(mode: "Regular", imageName: "regular", color: "TurfWarGreen")
+              .shadow(radius: 5)
           }
           NavigationLink(destination: AnarchyScheduleDetailView()) {
             ModeCardView(mode: "Anarchy", imageName: "bankara", color: "AnarchyOrange")
+              .shadow(radius: 5)
           }
         }
         .padding()
         HStack {
           NavigationLink(destination: ChallengeView()) {
             ModeCardView(mode: "Challenge", imageName: "event", color: "ChallengeMagenta")
+              .shadow(radius: 5)
           }
           NavigationLink(destination: XScheduleDetailView()) {
             ModeCardView(mode: "X Rank", imageName: "x", color: "XRankTeal")
+              .shadow(radius: 5)
           }
         }
         .padding()
       }
+
       .background(
         Image("bg-light")
           .ignoresSafeArea(.all)
